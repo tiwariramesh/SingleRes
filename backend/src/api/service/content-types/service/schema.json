@@ -16,16 +16,16 @@
             "type": "string",
             "required": true
         },
-        "category": {
-            "type": "string"
-        },
-        "subtitle": {
-            "type": "string"
-        },
         "description": {
-            "type": "richtext"
+            "type": "text"
         },
         "icon": {
+            "type": "string"
+        },
+        "color": {
+            "type": "string"
+        },
+        "bg": {
             "type": "string"
         },
         "order": {

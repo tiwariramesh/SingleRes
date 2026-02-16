@@ -16,22 +16,16 @@
             "type": "string",
             "required": true
         },
-        "issuingOrganization": {
+        "role": {
             "type": "string"
         },
-        "issueDate": {
-            "type": "date"
-        },
-        "expiryDate": {
-            "type": "date"
-        },
-        "credentialId": {
+        "year": {
             "type": "string"
         },
-        "credentialUrl": {
+        "link": {
             "type": "string"
         },
-        "badge": {
+        "logo": {
             "type": "media",
             "multiple": false,
             "allowedTypes": [

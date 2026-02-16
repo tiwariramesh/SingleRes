@@ -5,9 +5,9 @@ const CareerJourney = () => {
     // Data combining specific user request (2012 start) with provided sample data
     const experiences = [
         {
-            role: "Project Manager II",
-            company: "Perth Institute of Business and Technology",
-            date: "Jun 2023 - Present",
+            role: "Vocational Trainer in Business & Project Management",
+            company: "National Institute of Technology",
+            date: "April 2024 - Present",
             duration: "Current",
             description: [
                 "Delivering Diploma of Project Management and facilitating Professional Year Programs.",
@@ -19,7 +19,7 @@ const CareerJourney = () => {
         },
         {
             role: "ICT Project Manager",
-            company: "West Coast Tech Solutions",
+            company: "Leapfrog Technology",
             date: "Aug 2021 - May 2023",
             duration: "1 yr 10 mos",
             description: [

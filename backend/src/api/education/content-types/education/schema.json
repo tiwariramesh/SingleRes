@@ -12,51 +12,31 @@
     },
     "pluginOptions": {},
     "attributes": {
-        "degreeType": {
-            "type": "enumeration",
-            "enum": [
-                "Postgraduate",
-                "Undergraduate",
-                "Certification",
-                "Other"
-            ]
-        },
-        "degree": {
+        "title": {
             "type": "string",
             "required": true
         },
-        "field": {
-            "type": "string"
+        "name": {
+            "type": "string",
+            "required": true
         },
         "institution": {
             "type": "string",
             "required": true
         },
-        "startDate": {
-            "type": "date"
-        },
-        "endDate": {
-            "type": "date"
-        },
-        "current": {
-            "type": "boolean",
-            "default": false
-        },
-        "gpa": {
-            "type": "string"
+        "year": {
+            "type": "string",
+            "required": true
         },
         "description": {
             "type": "richtext"
         },
-        "logo": {
+        "image": {
             "type": "media",
             "multiple": false,
             "allowedTypes": [
                 "images"
             ]
-        },
-        "location": {
-            "type": "string"
         },
         "order": {
             "type": "integer"
