@@ -12,13 +12,13 @@ const Services = () => {
     ];
 
     return (
-        <section id="services" className="py-24 bg-pmi-navy">
-            <div className="container mx-auto px-4">
+        <section id="services" className="py-16 bg-gradient-to-b from-pmi-blue/20 to-white">
+            <div className="container mx-auto px-4 max-w-6xl">
                 <div className="mb-16">
-                    <h2 className="text-5xl font-black text-white tracking-tight">
-                        Driving Excellence with <br /><span className="text-pmi-orange">Professional Services.</span>
+                    <h2 className="text-5xl font-black text-pmi-navy tracking-tight">
+                        Driving Excellence with <br /><span className="text-pmi-blue">Professional Services.</span>
                     </h2>
-                    <p className="text-slate-400 font-medium mt-6 max-w-2xl">
+                    <p className="text-slate-500 font-medium mt-6 max-w-2xl">
                         Empowering organizations through strategic agile implementation and leadership development.
                     </p>
                 </div>
@@ -27,18 +27,15 @@ const Services = () => {
                     {services.map((service, index) => (
                         <div
                             key={index}
-                            className="glass-card-dark p-10 rounded-[2.5rem] hover:transform hover:-translate-y-2 transition-all duration-500 group cursor-default"
+                            className="bg-white p-10 rounded-[2.5rem] border border-slate-100 hover:shadow-xl hover:shadow-pmi-blue/5 hover:transform hover:-translate-y-2 transition-all duration-500 group cursor-default"
                         >
-                            <div className={`w-16 h-16 rounded-2xl ${service.bg} ${service.color} flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-xl shadow-black/20`}>
+                            <div className={`w-16 h-16 rounded-2xl ${service.bg} ${service.color} flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-xl shadow-black/5`}>
                                 {React.cloneElement(service.icon, { size: 32 })}
                             </div>
-                            <h3 className="text-2xl font-black text-white tracking-tight">{service.title}</h3>
-                            <p className="text-slate-400 text-base mt-4 leading-relaxed font-medium">
+                            <h3 className="text-2xl font-black text-pmi-navy tracking-tight">{service.title}</h3>
+                            <p className="text-slate-500 text-base mt-4 leading-relaxed font-medium">
                                 Comprehensive solutions tailored to your unique organizational culture and delivery goals.
                             </p>
-                            <div className="mt-8 flex items-center gap-2 text-pmi-orange text-sm font-black uppercase tracking-widest cursor-pointer group-hover:gap-4 transition-all">
-                                Learn More <span className="text-xl">→</span>
-                            </div>
                         </div>
                     ))}
                 </div>

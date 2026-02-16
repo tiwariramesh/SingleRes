@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -23,11 +23,11 @@
   }
 
   .glass-card {
-    @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-[0_8px_32px_rgba(0, 0, 0, 0.08)];
+    @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-glass;
   }
 
   .glass-card-dark {
-    @apply bg-pmi-navy/80 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0, 0, 0, 0.2)];
+    @apply bg-pmi-navy/80 backdrop-blur-xl border border-white/10 shadow-glass-dark;
   }
 }
 
@@ -95,6 +95,9 @@ html {
   --color-pmi-purple: #7D3CBD;
   --color-pmi-cyan: #00A3AD;
   --color-pmi-green: #00A38D;
+
+  --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --shadow-glass-dark: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 :root {
@@ -158,5 +161,6 @@ html {
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
   --sidebar-ring: oklch(0.556 0 0);
 }

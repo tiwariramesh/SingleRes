@@ -12,31 +12,18 @@
     },
     "pluginOptions": {},
     "attributes": {
-        "name": {
+        "title": {
             "type": "string",
             "required": true
         },
-        "category": {
-            "type": "string",
-            "required": true
-        },
-        "description": {
-            "type": "text"
-        },
-        "subSkills": {
-            "type": "json"
-        },
-        "icon": {
+        "barColor": {
             "type": "string"
         },
-        "accentColor": {
-            "type": "enumeration",
-            "enum": [
-                "indigo",
-                "blue",
-                "purple",
-                "emerald"
-            ]
+        "badge": {
+            "type": "string"
+        },
+        "skills": {
+            "type": "json"
         },
         "order": {
             "type": "integer"

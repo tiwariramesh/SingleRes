@@ -12,7 +12,7 @@
     },
     "pluginOptions": {},
     "attributes": {
-        "position": {
+        "role": {
             "type": "string",
             "required": true
         },
@@ -20,16 +20,9 @@
             "type": "string",
             "required": true
         },
-        "startDate": {
-            "type": "date",
+        "dateRange": {
+            "type": "string",
             "required": true
-        },
-        "endDate": {
-            "type": "date"
-        },
-        "current": {
-            "type": "boolean",
-            "default": false
         },
         "duration": {
             "type": "string"
@@ -37,23 +30,17 @@
         "description": {
             "type": "richtext"
         },
-        "companyLogo": {
-            "type": "media",
-            "multiple": false,
-            "allowedTypes": [
-                "images"
-            ]
-        },
-        "location": {
+        "color": {
             "type": "string"
         },
-        "statusColor": {
+        "type": {
             "type": "enumeration",
             "enum": [
-                "emerald",
-                "blue",
-                "slate"
-            ]
+                "work",
+                "education",
+                "other"
+            ],
+            "default": "work"
         },
         "order": {
             "type": "integer"

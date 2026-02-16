@@ -44,8 +44,17 @@
     "location": {
       "type": "string"
     },
-    "yearsOfExperience": {
-      "type": "integer"
+    "heroStats": {
+      "type": "json"
+    },
+    "heroBadges": {
+      "type": "json"
+    },
+    "socialLinks": {
+      "type": "json"
+    },
+    "timelineSteps": {
+      "type": "json"
     },
     "tagline": {
       "type": "text"
@@ -53,26 +62,26 @@
     "profilePhoto": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "resumePDF": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["files"]
+      "allowedTypes": [
+        "files"
+      ]
     },
     "resumeText": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["files"]
-    },
-    "resumePDFSize": {
-      "type": "string"
-    },
-    "resumeTextSize": {
-      "type": "string"
+      "allowedTypes": [
+        "files"
+      ]
     },
     "resumeLastUpdated": {
-      "type": "date"
+      "type": "string"
     }
   }
 }

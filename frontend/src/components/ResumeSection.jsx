@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const ResumeSection = () => {
     return (
-        <section id="credentials" className="py-24 bg-gradient-to-b from-white via-pmi-blue/5 to-white">
+        <section id="resume" className="py-16 bg-gradient-to-b from-white to-slate-50/30">
             <div className="container mx-auto px-4 max-w-6xl">
                 <div className="mb-14">
                     <h2 className="text-4xl md:text-5xl font-black text-pmi-navy tracking-tight">

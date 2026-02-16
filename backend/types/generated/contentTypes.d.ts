@@ -443,27 +443,25 @@ export interface ApiCertificationCertification
     draftAndPublish: true;
   };
   attributes: {
-    badge: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    credentialId: Schema.Attribute.String;
-    credentialUrl: Schema.Attribute.String;
-    expiryDate: Schema.Attribute.Date;
-    issueDate: Schema.Attribute.Date;
-    issuingOrganization: Schema.Attribute.String;
+    link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::certification.certification'
     > &
       Schema.Attribute.Private;
+    logo: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    year: Schema.Attribute.String;
   };
 }
 
@@ -517,15 +515,8 @@ export interface ApiEducationEducation extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    current: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    degree: Schema.Attribute.String & Schema.Attribute.Required;
-    degreeType: Schema.Attribute.Enumeration<
-      ['Postgraduate', 'Undergraduate', 'Certification', 'Other']
-    >;
     description: Schema.Attribute.RichText;
-    endDate: Schema.Attribute.Date;
-    field: Schema.Attribute.String;
-    gpa: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images'>;
     institution: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -533,14 +524,14 @@ export interface ApiEducationEducation extends Struct.CollectionTypeSchema {
       'api::education.education'
     > &
       Schema.Attribute.Private;
-    location: Schema.Attribute.String;
-    logo: Schema.Attribute.Media<'images'>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    startDate: Schema.Attribute.Date;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    year: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -556,27 +547,25 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    color: Schema.Attribute.String;
     company: Schema.Attribute.String & Schema.Attribute.Required;
-    companyLogo: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    current: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    dateRange: Schema.Attribute.String & Schema.Attribute.Required;
     description: Schema.Attribute.RichText;
     duration: Schema.Attribute.String;
-    endDate: Schema.Attribute.Date;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::experience.experience'
     > &
       Schema.Attribute.Private;
-    location: Schema.Attribute.String;
     order: Schema.Attribute.Integer;
-    position: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    startDate: Schema.Attribute.Date & Schema.Attribute.Required;
-    statusColor: Schema.Attribute.Enumeration<['emerald', 'blue', 'slate']>;
+    role: Schema.Attribute.String & Schema.Attribute.Required;
+    type: Schema.Attribute.Enumeration<['work', 'education', 'other']> &
+      Schema.Attribute.DefaultTo<'work'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -664,6 +653,8 @@ export interface ApiProfileProfile extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     email: Schema.Attribute.Email & Schema.Attribute.Required;
     firstName: Schema.Attribute.String & Schema.Attribute.Required;
+    heroBadges: Schema.Attribute.JSON;
+    heroStats: Schema.Attribute.JSON;
     initials: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 5;
@@ -679,18 +670,17 @@ export interface ApiProfileProfile extends Struct.SingleTypeSchema {
     phone: Schema.Attribute.String;
     profilePhoto: Schema.Attribute.Media<'images'>;
     publishedAt: Schema.Attribute.DateTime;
-    resumeLastUpdated: Schema.Attribute.Date;
+    resumeLastUpdated: Schema.Attribute.String;
     resumePDF: Schema.Attribute.Media<'files'>;
-    resumePDFSize: Schema.Attribute.String;
     resumeText: Schema.Attribute.Media<'files'>;
-    resumeTextSize: Schema.Attribute.String;
+    socialLinks: Schema.Attribute.JSON;
     subtitle: Schema.Attribute.String;
     tagline: Schema.Attribute.Text;
+    timelineSteps: Schema.Attribute.JSON;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    yearsOfExperience: Schema.Attribute.Integer;
   };
 }
 
@@ -749,11 +739,12 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    category: Schema.Attribute.String;
+    bg: Schema.Attribute.String;
+    color: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.RichText;
+    description: Schema.Attribute.Text;
     icon: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -763,7 +754,6 @@ export interface ApiServiceService extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    subtitle: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -783,22 +773,18 @@ export interface ApiSkillSkill extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    accentColor: Schema.Attribute.Enumeration<
-      ['indigo', 'blue', 'purple', 'emerald']
-    >;
-    category: Schema.Attribute.String & Schema.Attribute.Required;
+    badge: Schema.Attribute.String;
+    barColor: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
-    icon: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::skill.skill'> &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String & Schema.Attribute.Required;
     order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
-    subSkills: Schema.Attribute.JSON;
+    skills: Schema.Attribute.JSON;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
