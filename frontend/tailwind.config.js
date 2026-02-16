@@ -24,6 +24,10 @@ export default {
                     '50%': { transform: 'translateY(-20px)' },
                 },
             },
+            boxShadow: {
+                'glass': '0 8px 32px rgba(0, 0, 0, 0.08)',
+                'glass-dark': '0 8px 32px rgba(0, 0, 0, 0.2)',
+            },
         },
     },
     plugins: [],

@@ -1,14 +1,9 @@
 import { useEffect, useState } from 'react'
 import { api } from '@/services/api'
 import { Skeleton } from "@/components/ui/skeleton"
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import ResumeSection from './components/ResumeSection'
-import Competencies from './components/Competencies'
-import CareerJourney from './components/CareerJourney'
-import Credentials from './components/Credentials'
-import Services from './components/Services'
-import { LogoCloud, Footer } from './components/Footer'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Home from './pages/Home'
+import PrivacyPolicy from './pages/PrivacyPolicy'
 
 function App() {
   const [profile, setProfile] = useState(null)
@@ -54,38 +49,18 @@ function App() {
   const initials = profile ? `${profile.firstName?.[0] || ''}${profile.lastName?.[0] || ''}` : 'RT'
 
   return (
-    <div className="min-h-screen bg-white font-sans text-pmi-navy selection:bg-pmi-blue selection:text-white">
-      <Navbar
-        initials={initials}
-        firstName={profile?.firstName}
-        lastName={profile?.lastName}
-      />
-
-      <main>
-        <Hero
-          title={profile?.title}
-          bio={profile?.bio}
-          profileImage={profile?.profilePhoto?.url ? `${import.meta.env.VITE_STRAPI_URL}${profile.profilePhoto.url}` : null}
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={<Home profile={profile} initials={initials} />}
         />
-
-        <ResumeSection />
-
-        <Competencies />
-
-        <CareerJourney />
-
-        <Credentials />
-
-        <Services />
-
-        <LogoCloud />
-      </main>
-
-      <Footer
-        firstName={profile?.firstName}
-        lastName={profile?.lastName}
-      />
-    </div>
+        <Route
+          path="/privacy-policy"
+          element={<PrivacyPolicy />}
+        />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

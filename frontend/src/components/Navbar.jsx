@@ -8,6 +8,8 @@ import {
     SheetClose,
 } from "@/components/ui/sheet";
 
+import { Link } from 'react-router-dom';
+
 const navItems = [
     { label: 'Home', href: '#' },
     { label: 'Skills', href: '#skills' },
@@ -29,13 +31,15 @@ const Navbar = ({ initials, firstName, lastName }) => {
     }, []);
 
     const scrollToSection = (e, href) => {
-        e.preventDefault();
-        if (href === '#') {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-            const element = document.querySelector(href);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            if (href === '#') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                const element = document.querySelector(href);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         }
     };
@@ -51,14 +55,14 @@ const Navbar = ({ initials, firstName, lastName }) => {
         ${isScrolled ? 'md:py-2 transform scale-[0.98]' : 'md:py-3'}
       `}>
                 {/* Logo & Name */}
-                <div className="flex items-center gap-2.5">
+                <Link to="/" className="flex items-center gap-2.5 cursor-pointer" onClick={(e) => scrollToSection(e, '#')}>
                     <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-pmi-blue flex items-center justify-center text-white font-bold text-xs md:text-sm shadow-lg shadow-pmi-blue/30 overflow-hidden">
                         {initials || 'RT'}
                     </div>
                     <span className="font-black text-pmi-navy tracking-[0.05em] text-[13px] md:text-sm whitespace-nowrap">
                         {firstName?.toUpperCase() || 'RAMESH'} {lastName?.toUpperCase() || 'TIWARI.'}
                     </span>
-                </div>
+                </Link>
 
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex items-center gap-8">

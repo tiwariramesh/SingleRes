@@ -4,16 +4,19 @@ import { Button } from '@/components/ui/button';
 
 const Hero = ({ title, bio, profileImage }) => {
     return (
-        <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-32">
+        <section className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-24">
             {/* Subtle Background Elements */}
             <div className="absolute top-0 right-0 -z-10 w-[400px] h-[400px] bg-pmi-blue/5 rounded-full blur-3xl opacity-60 translate-x-1/4 -translate-y-1/4"></div>
+            {/* New Modern UX Circles */}
+            <div className="absolute top-20 left-10 -z-10 w-96 h-96 bg-gradient-to-br from-pmi-blue/5 to-purple-500/5 rounded-full blur-3xl opacity-50"></div>
+            <div className="absolute bottom-10 right-20 -z-10 w-80 h-80 bg-gradient-to-tr from-cyan-400/5 to-blue-500/5 rounded-full blur-3xl opacity-50"></div>
 
             <div className="container mx-auto px-4 lg:px-8">
                 <div className="grid lg:grid-cols-12 gap-12 items-center">
 
                     {/* Left Content */}
-                    <div className="lg:col-span-7 space-y-6 lg:space-y-8">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pmi-blue/5 border border-pmi-blue/10 text-pmi-blue font-bold text-[10px] md:text-xs tracking-widest uppercase">
+                    <div className="lg:col-span-7 space-y-6 lg:space-y-8 text-center lg:text-left">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pmi-blue/5 border border-pmi-blue/10 text-pmi-blue font-bold text-[10px] md:text-xs tracking-widest uppercase mb-2">
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pmi-blue opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-pmi-blue"></span>
@@ -30,7 +33,7 @@ const Hero = ({ title, bio, profileImage }) => {
                             </h2>
                         </div>
 
-                        <p className="text-base md:text-lg text-muted-foreground font-medium leading-relaxed max-w-2xl">
+                        <p className="text-base md:text-lg text-muted-foreground font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
                             {bio ? (
                                 <span dangerouslySetInnerHTML={{
                                     __html: bio
@@ -44,7 +47,7 @@ const Hero = ({ title, bio, profileImage }) => {
                             )}
                         </p>
 
-                        <div className="flex flex-wrap gap-4 pt-2">
+                        <div className="flex flex-wrap gap-4 pt-2 justify-center lg:justify-start">
                             <Button
                                 size="lg"
                                 className="h-11 px-7 rounded-xl bg-pmi-navy hover:bg-black text-white font-bold text-[13px] shadow-xl shadow-pmi-navy/20 transition-all hover:-translate-y-1 flex items-center gap-2"
@@ -61,7 +64,7 @@ const Hero = ({ title, bio, profileImage }) => {
                         </div>
 
                         {/* Compact Stats */}
-                        <div className="flex items-center gap-10 pt-8 border-t border-slate-100">
+                        <div className="flex items-center gap-10 pt-8 border-t border-slate-100 justify-center lg:justify-start">
                             <div>
                                 <p className="text-2xl font-black text-pmi-navy">10+</p>
                                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Years Exp.</p>
@@ -78,7 +81,7 @@ const Hero = ({ title, bio, profileImage }) => {
                     </div>
 
                     {/* Right Content (Image & Badges) */}
-                    <div className="lg:col-span-12 xl:col-span-5 relative flex justify-center lg:justify-end py-10 lg:py-0">
+                    <div className="lg:col-span-12 xl:col-span-5 relative flex justify-center lg:justify-end xl:pr-16 py-10 lg:py-0">
                         <div className="relative group">
                             {/* Decorative Circle Backgrounds */}
                             <div className="absolute inset-0 bg-pmi-blue/10 rounded-full scale-110 blur-2xl group-hover:bg-pmi-blue/20 transition-all duration-700"></div>

@@ -1,38 +1,24 @@
 import React from 'react';
-
-const LogoCloud = () => {
-    const logos = ["SPOXTER", "CISCENE", "AXER", "LOGIX", "ALTOM", "ITEX", "VULCANI"];
-
-    return (
-        <section className="py-24 bg-white">
-            <div className="container mx-auto px-4 text-center">
-                <h2 className="text-4xl font-black text-pmi-navy tracking-tight mb-16">
-                    Trusted by Industry <span className="text-pmi-blue">Leaders.</span>
-                </h2>
-
-                <div className="flex flex-wrap justify-center gap-6">
-                    {logos.map((logo, index) => (
-                        <div key={index} className="w-40 h-24 bg-pmi-navy rounded-2xl flex items-center justify-center text-white font-black text-lg tracking-widest opacity-90 hover:opacity-100 transition-opacity">
-                            {logo}
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
-};
+import { Mail, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = ({ firstName, lastName }) => {
     return (
-        <footer id="contact" className="bg-secondary/30 pt-24 pb-12 border-t border-border">
-            <div className="container mx-auto px-4">
+        <footer id="contact" className="bg-secondary/30 pt-16 pb-8 border-t border-border">
+            <div className="container mx-auto px-4 max-w-6xl">
                 <div className="grid lg:grid-cols-4 gap-12 mb-16">
                     <div className="lg:col-span-2 space-y-6">
                         <h2 className="text-4xl font-black text-pmi-navy">Ready to <span className="text-pmi-blue">Scale Together?</span></h2>
                         <p className="text-muted-foreground font-medium max-w-md">Let's discuss how we can drive your project success and team growth through proven agile methodologies.</p>
-                        <div className="flex gap-4">
-                            <button className="px-8 py-4 rounded-xl bg-pmi-navy text-white font-bold">Start a Project</button>
-                            <button className="px-8 py-4 rounded-xl bg-white border border-border text-pmi-navy font-bold">View Portfolio</button>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <a href="mailto:meet.atutgorkhali@gmail.com" className="px-8 py-4 rounded-xl bg-pmi-navy text-white font-bold hover:bg-black transition-colors flex items-center justify-center gap-3">
+                                <Mail size={20} />
+                                <span>meet.atutgorkhali@gmail.com</span>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-xl bg-white border border-border text-pmi-navy font-bold hover:border-pmi-blue hover:text-pmi-blue transition-all flex items-center justify-center gap-3">
+                                <Linkedin size={20} />
+                                <span>LinkedIn Profile</span>
+                            </a>
                         </div>
                     </div>
 
@@ -61,7 +47,7 @@ const Footer = ({ firstName, lastName }) => {
                         © {new Date().getFullYear()} {firstName} {lastName}. Professional Resume.
                     </p>
                     <div className="flex gap-8 text-xs font-bold text-pmi-navy/60">
-                        <a href="#" className="hover:text-pmi-blue">Privacy Policy</a>
+                        <Link to="/privacy-policy" className="hover:text-pmi-blue">Privacy Policy</Link>
                         <a href="#" className="hover:text-pmi-blue">Terms of Service</a>
                     </div>
                 </div>
@@ -70,4 +56,5 @@ const Footer = ({ firstName, lastName }) => {
     );
 };
 
-export { LogoCloud, Footer };
+export { Footer };
+
