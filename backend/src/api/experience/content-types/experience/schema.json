@@ -1,0 +1,62 @@
+{
+    "kind": "collectionType",
+    "collectionName": "experiences",
+    "info": {
+        "singularName": "experience",
+        "pluralName": "experiences",
+        "displayName": "Experience",
+        "description": "Career timeline showing work history"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "position": {
+            "type": "string",
+            "required": true
+        },
+        "company": {
+            "type": "string",
+            "required": true
+        },
+        "startDate": {
+            "type": "date",
+            "required": true
+        },
+        "endDate": {
+            "type": "date"
+        },
+        "current": {
+            "type": "boolean",
+            "default": false
+        },
+        "duration": {
+            "type": "string"
+        },
+        "description": {
+            "type": "richtext"
+        },
+        "companyLogo": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "location": {
+            "type": "string"
+        },
+        "statusColor": {
+            "type": "enumeration",
+            "enum": [
+                "emerald",
+                "blue",
+                "slate"
+            ]
+        },
+        "order": {
+            "type": "integer"
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "kind": "collectionType",
+    "collectionName": "skills",
+    "info": {
+        "singularName": "skill",
+        "pluralName": "skills",
+        "displayName": "Skill",
+        "description": "Skills and competencies organized by categories"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "category": {
+            "type": "string",
+            "required": true
+        },
+        "description": {
+            "type": "text"
+        },
+        "subSkills": {
+            "type": "json"
+        },
+        "icon": {
+            "type": "string"
+        },
+        "accentColor": {
+            "type": "enumeration",
+            "enum": [
+                "indigo",
+                "blue",
+                "purple",
+                "emerald"
+            ]
+        },
+        "order": {
+            "type": "integer"
+        }
+    }
+}

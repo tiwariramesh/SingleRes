@@ -1,0 +1,78 @@
+{
+  "kind": "singleType",
+  "collectionName": "profiles",
+  "info": {
+    "singularName": "profile",
+    "pluralName": "profiles",
+    "displayName": "Profile",
+    "description": "Main profile information for the resume website"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "initials": {
+      "type": "string",
+      "maxLength": 5
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "yearsOfExperience": {
+      "type": "integer"
+    },
+    "tagline": {
+      "type": "text"
+    },
+    "profilePhoto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "resumePDF": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["files"]
+    },
+    "resumeText": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["files"]
+    },
+    "resumePDFSize": {
+      "type": "string"
+    },
+    "resumeTextSize": {
+      "type": "string"
+    },
+    "resumeLastUpdated": {
+      "type": "date"
+    }
+  }
+}

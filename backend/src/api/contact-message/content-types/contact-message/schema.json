@@ -1,0 +1,39 @@
+{
+    "kind": "collectionType",
+    "collectionName": "contact_messages",
+    "info": {
+        "singularName": "contact-message",
+        "pluralName": "contact-messages",
+        "displayName": "Contact Message",
+        "description": "Form submissions from the contact page"
+    },
+    "options": {
+        "draftAndPublish": false
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "email": {
+            "type": "email",
+            "required": true
+        },
+        "subject": {
+            "type": "string"
+        },
+        "message": {
+            "type": "richtext",
+            "required": true
+        },
+        "read": {
+            "type": "boolean",
+            "default": false
+        },
+        "replied": {
+            "type": "boolean",
+            "default": false
+        }
+    }
+}

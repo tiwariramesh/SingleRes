@@ -1,0 +1,23 @@
+{
+    "kind": "collectionType",
+    "collectionName": "industries",
+    "info": {
+        "singularName": "industry",
+        "pluralName": "industries",
+        "displayName": "Industry",
+        "description": "Industry and domain experience tags"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "order": {
+            "type": "integer"
+        }
+    }
+}

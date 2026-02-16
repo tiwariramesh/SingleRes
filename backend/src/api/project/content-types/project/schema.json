@@ -1,0 +1,72 @@
+{
+    "kind": "collectionType",
+    "collectionName": "projects",
+    "info": {
+        "singularName": "project",
+        "pluralName": "projects",
+        "displayName": "Project",
+        "description": "Portfolio pieces and case studies"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "description": {
+            "type": "richtext"
+        },
+        "shortDescription": {
+            "type": "string"
+        },
+        "thumbnail": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "images": {
+            "type": "media",
+            "multiple": true,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "category": {
+            "type": "enumeration",
+            "enum": [
+                "Web App",
+                "Mobile App",
+                "API",
+                "E-commerce",
+                "Other"
+            ]
+        },
+        "techStack": {
+            "type": "json"
+        },
+        "liveUrl": {
+            "type": "string"
+        },
+        "githubUrl": {
+            "type": "string"
+        },
+        "caseStudyUrl": {
+            "type": "string"
+        },
+        "featured": {
+            "type": "boolean",
+            "default": false
+        },
+        "order": {
+            "type": "integer"
+        },
+        "completedDate": {
+            "type": "date"
+        }
+    }
+}

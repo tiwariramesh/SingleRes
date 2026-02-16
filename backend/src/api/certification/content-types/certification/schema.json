@@ -1,0 +1,45 @@
+{
+    "kind": "collectionType",
+    "collectionName": "certifications",
+    "info": {
+        "singularName": "certification",
+        "pluralName": "certifications",
+        "displayName": "Certification",
+        "description": "Professional certifications and licenses"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "name": {
+            "type": "string",
+            "required": true
+        },
+        "issuingOrganization": {
+            "type": "string"
+        },
+        "issueDate": {
+            "type": "date"
+        },
+        "expiryDate": {
+            "type": "date"
+        },
+        "credentialId": {
+            "type": "string"
+        },
+        "credentialUrl": {
+            "type": "string"
+        },
+        "badge": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "order": {
+            "type": "integer"
+        }
+    }
+}

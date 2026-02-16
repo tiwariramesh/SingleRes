@@ -1,0 +1,192 @@
+{
+    "profile": {
+        "firstName": "Ramesh",
+        "lastName": "Tiwari",
+        "initials": "RT",
+        "title": "Vocational PM Trainer | Former ICT Project Manager & BA",
+        "subtitle": "Bridging Industry Excellence and Academic Growth.",
+        "bio": "A results-oriented Project Management professional and Vocational Trainer based in Perth, WA. With over 4 years of hands-on experience as an ICT Project Manager and Business Analyst, I now specialize in empowering the next generation of professionals through the Professional Year Program and Vocational PM courses. I combine real-world Perth industry insights with rigorous academic delivery to drive meaningful career transformations.",
+        "email": "ramestiwarii@gmail.com",
+        "phone": "+61 4XX XXX XXX",
+        "location": "Perth, Western Australia",
+        "yearsOfExperience": 4,
+        "tagline": "Empowering future leaders through industry-aligned project management education.",
+        "resumePDFSize": "245 KB",
+        "resumeTextSize": "42 KB",
+        "resumeLastUpdated": "2024-02-16"
+    },
+    "experience": [
+        {
+            "position": "Vocational PM & Professional Year Trainer",
+            "company": "Perth Institute of Business and Technology",
+            "startDate": "2023-06-01",
+            "endDate": null,
+            "current": true,
+            "duration": "Current",
+            "description": "• Delivering BSB50820 Diploma of Project Management to international and domestic students.\n• Facilitating the Professional Year Program (PYP) for ICT graduates, focusing on Australian workplace culture and professional communication.\n• Mentoring students on Agile methodologies and PMBOK standards.",
+            "location": "Perth CBD",
+            "statusColor": "emerald",
+            "order": 1
+        },
+        {
+            "position": "ICT Project Manager",
+            "company": "West Coast Tech Solutions",
+            "startDate": "2021-08-01",
+            "endDate": "2023-05-30",
+            "current": false,
+            "duration": "1 yr 10 mos",
+            "description": "• Led the delivery of mid-scale cloud migration projects for local Perth SMEs.\n• Managed cross-functional teams of developers and QA engineers.\n• Standardized project documentation using Confluence and Jira.",
+            "location": "Subiaco, WA",
+            "statusColor": "blue",
+            "order": 2
+        },
+        {
+            "position": "Business Analyst",
+            "company": "Perth Digital ERP Systems",
+            "startDate": "2020-01-01",
+            "endDate": "2021-07-31",
+            "current": false,
+            "duration": "1 yr 7 mos",
+            "description": "• Conducted stakeholder workshops to gather business requirements for ERP implementations.\n• Developed detailed user stories and process flow diagrams.\n• Bridged communication between the client's business units and the technical dev team.",
+            "location": "East Perth, WA",
+            "statusColor": "slate",
+            "order": 3
+        }
+    ],
+    "skills": [
+        {
+            "name": "Project Governance",
+            "category": "Management & Leadership",
+            "subSkills": [
+                {
+                    "name": "PMBOK & PRINCE2",
+                    "detail": "Structured methodology application"
+                },
+                {
+                    "name": "Agile/Scrum",
+                    "detail": "Sprint planning and execution"
+                },
+                {
+                    "name": "Risk Management",
+                    "detail": "Mitigation and contingency planning"
+                }
+            ],
+            "icon": "shield-check",
+            "accentColor": "indigo",
+            "order": 1
+        },
+        {
+            "name": "Technical Proficiency",
+            "category": "Engineering & Tools",
+            "subSkills": [
+                {
+                    "name": "Jira & Confluence",
+                    "detail": "Expert level project tracking"
+                },
+                {
+                    "name": "React & Node.js",
+                    "detail": "Understanding technical architectures"
+                },
+                {
+                    "name": "SQL Databases",
+                    "detail": "Data analysis and reporting"
+                }
+            ],
+            "icon": "code-2",
+            "accentColor": "blue",
+            "order": 2
+        },
+        {
+            "name": "Educational Delivery",
+            "category": "Leadership & Communication",
+            "subSkills": [
+                {
+                    "name": "Vocational Training",
+                    "detail": "ASQA compliant delivery"
+                },
+                {
+                    "name": "Student Mentoring",
+                    "detail": "Career pathway coaching"
+                },
+                {
+                    "name": "Public Speaking",
+                    "detail": "Engaging large-group facilitations"
+                }
+            ],
+            "icon": "users",
+            "accentColor": "purple",
+            "order": 3
+        }
+    ],
+    "expertiseTags": [
+        {
+            "name": "PMBOK 7",
+            "icon": "book-open"
+        },
+        {
+            "name": "Agile Scrum",
+            "icon": "zap"
+        },
+        {
+            "name": "ICT Governance",
+            "icon": "server"
+        },
+        {
+            "name": "Stakeholder Mgmt",
+            "icon": "users"
+        },
+        {
+            "name": "Professional Year",
+            "icon": "graduation-cap"
+        }
+    ],
+    "industries": [
+        {
+            "name": "Vocational Education"
+        },
+        {
+            "name": "ICT Consulting"
+        },
+        {
+            "name": "Perth Tech Hub"
+        },
+        {
+            "name": "Gov-Tech Services"
+        }
+    ],
+    "socialProof": [
+        {
+            "number": "500+",
+            "label": "Students Mentored",
+            "order": 1
+        },
+        {
+            "number": "12+",
+            "label": "ICT Projects Delivered",
+            "order": 2
+        },
+        {
+            "number": "4+",
+            "label": "Years Industry Exp",
+            "order": 3
+        }
+    ],
+    "services": [
+        {
+            "title": "Corporate PM Training",
+            "category": "EDUCATION",
+            "subtitle": "Training",
+            "description": "Customized project management workshops for corporate teams in Perth.",
+            "icon": "presentation",
+            "order": 1
+        },
+        {
+            "title": "BA Consulting",
+            "category": "CONSULT",
+            "subtitle": "Analysis",
+            "description": "Strategic business analysis and requirements gathering for ICT projects.",
+            "icon": "bar-chart-3",
+            "order": 2
+        }
+    ]
+}

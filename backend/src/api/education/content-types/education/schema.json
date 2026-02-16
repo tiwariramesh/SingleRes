@@ -1,0 +1,65 @@
+{
+    "kind": "collectionType",
+    "collectionName": "educations",
+    "info": {
+        "singularName": "education",
+        "pluralName": "educations",
+        "displayName": "Education",
+        "description": "Academic qualifications and degrees"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "degreeType": {
+            "type": "enumeration",
+            "enum": [
+                "Postgraduate",
+                "Undergraduate",
+                "Certification",
+                "Other"
+            ]
+        },
+        "degree": {
+            "type": "string",
+            "required": true
+        },
+        "field": {
+            "type": "string"
+        },
+        "institution": {
+            "type": "string",
+            "required": true
+        },
+        "startDate": {
+            "type": "date"
+        },
+        "endDate": {
+            "type": "date"
+        },
+        "current": {
+            "type": "boolean",
+            "default": false
+        },
+        "gpa": {
+            "type": "string"
+        },
+        "description": {
+            "type": "richtext"
+        },
+        "logo": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "location": {
+            "type": "string"
+        },
+        "order": {
+            "type": "integer"
+        }
+    }
+}
