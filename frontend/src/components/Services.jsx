@@ -23,18 +23,21 @@ const Services = () => {
                     </p>
                 </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {services.map((service, index) => (
-                        <div key={index} className="bg-white/5 backdrop-blur-sm p-8 rounded-[2rem] border border-white/10 hover:border-pmi-orange/50 transition-all group">
-                            <div className={`w-14 h-14 rounded-2xl ${service.bg} ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                                {React.cloneElement(service.icon, { size: 28 })}
+                        <div
+                            key={index}
+                            className="glass-card-dark p-10 rounded-[2.5rem] hover:transform hover:-translate-y-2 transition-all duration-500 group cursor-default"
+                        >
+                            <div className={`w-16 h-16 rounded-2xl ${service.bg} ${service.color} flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-xl shadow-black/20`}>
+                                {React.cloneElement(service.icon, { size: 32 })}
                             </div>
-                            <h3 className="text-xl font-black text-white">{service.title}</h3>
-                            <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+                            <h3 className="text-2xl font-black text-white tracking-tight">{service.title}</h3>
+                            <p className="text-slate-400 text-base mt-4 leading-relaxed font-medium">
                                 Comprehensive solutions tailored to your unique organizational culture and delivery goals.
                             </p>
-                            <div className="mt-6 flex items-center gap-2 text-pmi-orange text-xs font-bold uppercase tracking-widest cursor-pointer group-hover:gap-4 transition-all">
-                                Learn More <span>→</span>
+                            <div className="mt-8 flex items-center gap-2 text-pmi-orange text-sm font-black uppercase tracking-widest cursor-pointer group-hover:gap-4 transition-all">
+                                Learn More <span className="text-xl">→</span>
                             </div>
                         </div>
                     ))}
