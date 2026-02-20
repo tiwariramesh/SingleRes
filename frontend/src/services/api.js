@@ -35,6 +35,12 @@ export const api = {
         return response.data;
     },
 
+    // Get certifications
+    getCertifications: async () => {
+        const response = await apiClient.get('/certifications?sort=order:asc&populate=*');
+        return response.data;
+    },
+
     // Get projects
     getProjects: async () => {
         const response = await apiClient.get('/projects?sort=order:asc&populate=*');
@@ -50,6 +56,12 @@ export const api = {
     // Get social proof/stats
     getSocialProof: async () => {
         const response = await apiClient.get('/social-proofs?sort=order:asc');
+        return response.data;
+    },
+
+    // Get social links
+    getSocialLinks: async () => {
+        const response = await apiClient.get('/social-links?sort=order:asc&populate=*');
         return response.data;
     },
 

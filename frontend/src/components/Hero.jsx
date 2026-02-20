@@ -1,22 +1,52 @@
 import React from 'react';
-import { ShieldCheck, Trophy, BadgeCheck, GraduationCap, ArrowRight } from 'lucide-react';
+import * as Icons from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const Hero = ({ title, bio, profileImage }) => {
+const Hero = ({ profile }) => {
+    // Default fallback locally if profile is null (though App.jsx handles loading)
+    if (!profile) return null;
+
+    const {
+        title,
+        subtitle,
+        bio,
+        heroStats,
+        heroBadges,
+        profilePhoto
+    } = profile;
+
+    // Fixed image URL logic
+    const getPhotoUrl = (photo) => {
+        if (!photo) return null;
+        if (photo.url) { // v5 flat
+            return photo.url.startsWith('http') ? photo.url : `${import.meta.env.VITE_STRAPI_URL}${photo.url}`;
+        }
+        if (photo.data?.attributes?.url) { // v4 nested
+            const url = photo.data.attributes.url;
+            return url.startsWith('http') ? url : `${import.meta.env.VITE_STRAPI_URL}${url}`;
+        }
+        return null;
+    };
+
+    const imageUrl = getPhotoUrl(profilePhoto) || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop";
+
+    // Helper for icons
+    const Icon = ({ name, className }) => {
+        const LucideIcon = Icons[name];
+        // Only render if it's a valid component
+        return LucideIcon ? <LucideIcon className={className} /> : null;
+    };
+
     return (
         <section className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-24">
-            {/* Subtle Background Elements */}
-            <div className="absolute top-0 right-0 -z-10 w-[400px] h-[400px] bg-pmi-blue/5 rounded-full blur-3xl opacity-60 translate-x-1/4 -translate-y-1/4"></div>
-            {/* New Modern UX Circles */}
-            <div className="absolute top-20 left-10 -z-10 w-96 h-96 bg-gradient-to-br from-pmi-blue/5 to-purple-500/5 rounded-full blur-3xl opacity-50"></div>
-            <div className="absolute bottom-10 right-20 -z-10 w-80 h-80 bg-gradient-to-tr from-cyan-400/5 to-blue-500/5 rounded-full blur-3xl opacity-50"></div>
+            {/* Removed colorful background elements for a pure white layout */}
 
-            <div className="container mx-auto px-4 lg:px-8">
+            <div className="container mx-auto px-4 max-w-6xl">
                 <div className="grid lg:grid-cols-12 gap-12 items-center">
 
                     {/* Left Content */}
                     <div className="lg:col-span-7 space-y-6 lg:space-y-8 text-center lg:text-left">
-                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pmi-blue/5 border border-pmi-blue/10 text-pmi-blue font-bold text-[10px] md:text-xs tracking-widest uppercase mb-2">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pmi-blue/5 dark:bg-pmi-blue/20 border border-pmi-blue/10 dark:border-pmi-blue/30 text-pmi-blue dark:text-blue-300 font-bold text-[10px] md:text-xs tracking-widest uppercase mb-2">
                             <span className="relative flex h-2 w-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pmi-blue opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-pmi-blue"></span>
@@ -25,110 +55,94 @@ const Hero = ({ title, bio, profileImage }) => {
                         </div>
 
                         <div className="space-y-4">
-                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-pmi-navy leading-tight tracking-tight">
-                                <span className="text-pmi-blue">Agile</span> Project Manager.
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-pmi-navy dark:text-white leading-tight tracking-tight">
+                                {/* Gradient Title */}
+                                <span className="bg-clip-text text-transparent bg-gradient-to-r from-pmi-blue via-pmi-blue to-cyan-500 dark:from-blue-400 dark:to-cyan-300" dangerouslySetInnerHTML={{ __html: title || "Agile Project Manager" }} />
                             </h1>
-                            <h2 className="text-xl md:text-2xl font-bold text-pmi-navy/70 tracking-tight leading-tight">
-                                Adaptive Teams. <span className="text-pmi-blue">Reliable Delivery.</span>
+                            <h2 className="text-xl md:text-2xl font-bold text-pmi-navy/70 dark:text-slate-300 tracking-tight leading-tight">
+                                {subtitle}
                             </h2>
                         </div>
 
-                        <p className="text-base md:text-lg text-muted-foreground font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                            {bio ? (
-                                <span dangerouslySetInnerHTML={{
-                                    __html: bio
-                                        .replace(/\*\*(.*?)\*\*/g, '<b class="text-pmi-navy font-black">$1</b>')
-                                        .replace(/\[blue\](.*?)\[\/blue\]/g, '<span class="text-pmi-blue font-bold">$1</span>')
-                                }} />
-                            ) : (
-                                <>
-                                    Senior Agile Project Manager transforming <b className="text-pmi-navy font-black">complex delivery challenges</b> into streamlined <span className="text-pmi-blue font-bold">high-performing teams</span>, specializing in FinTech, Media and Scrum methodologies.
-                                </>
-                            )}
-                        </p>
+                        <div className="text-base md:text-lg text-muted-foreground dark:text-slate-400 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0" dangerouslySetInnerHTML={{ __html: bio }} />
 
                         <div className="flex flex-wrap gap-4 pt-2 justify-center lg:justify-start">
                             <Button
                                 size="lg"
-                                className="h-11 px-7 rounded-xl bg-pmi-navy hover:bg-black text-white font-bold text-[13px] shadow-xl shadow-pmi-navy/20 transition-all hover:-translate-y-1 flex items-center gap-2"
+                                className="liquid-button h-12 px-8 rounded-2xl font-black text-sm tracking-wide bg-pmi-blue hover:bg-pmi-blue/90 flex items-center gap-2"
+                                onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}
                             >
-                                Professional Journey <ArrowRight size={14} />
+                                Professional Journey <Icons.ArrowRight size={16} />
                             </Button>
                             <Button
                                 variant="outline"
                                 size="lg"
-                                className="h-11 px-7 rounded-xl bg-white text-pmi-navy font-bold text-[13px] border-2 border-slate-100 hover:border-pmi-blue hover:bg-pmi-blue/5 transition-all hover:-translate-y-1"
+                                className="liquid-outline-button h-12 px-8 rounded-2xl font-black text-sm tracking-wide"
+                                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                             >
                                 Contact Me
                             </Button>
                         </div>
 
                         {/* Compact Stats */}
-                        <div className="flex items-center gap-10 pt-8 border-t border-slate-100 justify-center lg:justify-start">
-                            <div>
-                                <p className="text-2xl font-black text-pmi-navy">10+</p>
-                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Years Exp.</p>
+                        {heroStats && (
+                            <div className="flex items-center gap-10 pt-8 border-t border-slate-100 dark:border-slate-800 justify-center lg:justify-start">
+                                {heroStats.map((stat, idx) => (
+                                    <div key={idx}>
+                                        <p className="text-2xl font-black text-pmi-navy dark:text-white">{stat.value}</p>
+                                        <p className="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mt-1">{stat.label}</p>
+                                    </div>
+                                ))}
                             </div>
-                            <div>
-                                <p className="text-2xl font-black text-pmi-navy">50+</p>
-                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Projects</p>
-                            </div>
-                            <div>
-                                <p className="text-2xl font-black text-pmi-navy">99%</p>
-                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Success</p>
-                            </div>
-                        </div>
+                        )}
                     </div>
 
                     {/* Right Content (Image & Badges) */}
                     <div className="lg:col-span-12 xl:col-span-5 relative flex justify-center lg:justify-end xl:pr-16 py-10 lg:py-0">
-                        <div className="relative group">
-                            {/* Decorative Circle Backgrounds */}
-                            <div className="absolute inset-0 bg-pmi-blue/10 rounded-full scale-110 blur-2xl group-hover:bg-pmi-blue/20 transition-all duration-700"></div>
-                            <div className="absolute -inset-4 border-2 border-dashed border-pmi-blue/20 rounded-full animate-[spin_20s_linear_infinite]"></div>
-                            <div className="absolute -inset-8 border border-pmi-navy/5 rounded-full"></div>
+                        <div className="relative flex justify-center items-center w-full h-[500px]">
+                            {/* Static Shadow/Background Ovals */}
+                            {/* Top Right Shadow Oval */}
+                            <div className="absolute top-0 right-10 w-[260px] h-[380px] md:w-[320px] md:h-[460px] rounded-[10rem] bg-pmi-blue/20 dark:bg-pmi-blue/10 translate-x-8 -translate-y-8 blur-3xl -z-10"></div>
 
-                            {/* Circular Image Container */}
-                            <div className="relative z-10 w-[300px] h-[300px] md:w-[380px] md:h-[380px] rounded-full p-3 bg-white shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] ring-1 ring-slate-100">
-                                <div className="w-full h-full rounded-full overflow-hidden bg-slate-50 relative border-4 border-white shadow-inner">
+                            {/* Bottom Left Shadow Oval */}
+                            <div className="absolute bottom-10 left-10 w-[260px] h-[380px] md:w-[320px] md:h-[460px] rounded-[10rem] bg-pmi-orange/20 dark:bg-purple-500/10 -translate-x-8 translate-y-8 blur-3xl -z-10"></div>
+
+                            {/* Main Oval Image Container */}
+                            <div className="relative w-[260px] h-[380px] md:w-[320px] md:h-[460px] rounded-[10rem] p-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl z-10 transition-transform duration-500">
+                                <div className="w-full h-full rounded-[9.5rem] overflow-hidden bg-slate-50 relative border border-white/50 shadow-inner">
                                     <img
-                                        src={profileImage || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop"}
+                                        src={imageUrl}
                                         alt="Profile"
-                                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                                        className="w-full h-full object-cover"
                                     />
-                                    {/* Subtle Gradient Overlay */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-pmi-navy/20 to-transparent pointer-events-none"></div>
+                                    {/* Glass Overlay for depth */}
+                                    <div className="absolute inset-0 bg-gradient-to-tr from-pmi-navy/10 to-transparent pointer-events-none mix-blend-overlay"></div>
                                 </div>
                             </div>
 
-                            {/* PMP Badge (Attached) */}
-                            <div className="absolute top-10 -right-4 md:-right-8 z-20 bg-white p-3 md:p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-slate-50 animate-float max-w-[160px] md:max-w-[180px]">
-                                <div className="flex items-center gap-2.5 md:gap-3">
-                                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-pmi-blue/10 flex items-center justify-center text-pmi-blue shrink-0">
-                                        <BadgeCheck size={22} className="md:size-24" />
-                                    </div>
-                                    <div>
-                                        <p className="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Certified</p>
-                                        <p className="text-[10px] md:text-[11px] font-black text-pmi-navy leading-tight uppercase">PMP® Professional</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Trainer Badge (Attached) */}
-                            <div className="absolute bottom-10 -left-4 md:-left-8 z-20 bg-white/95 backdrop-blur-md p-3 md:p-4 rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-slate-50 animate-float flex-shrink-0" style={{ animationDelay: '2s' }}>
-                                <div className="flex items-center gap-2.5 md:gap-3">
-                                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-600 shrink-0">
-                                        <Trophy size={18} className="md:size-20" />
-                                    </div>
-                                    <div>
-                                        <p className="text-[8px] md:text-[9px] font-bold text-slate-400 uppercase tracking-tighter">Experienced</p>
-                                        <p className="text-[10px] md:text-[11px] font-black text-pmi-navy leading-tight uppercase tracking-tight">Vocational Trainer</p>
+                            {/* Floating Badges - Repositioned for Vertical Oval */}
+                            {heroBadges && heroBadges.map((badge, idx) => (
+                                <div
+                                    key={idx}
+                                    className={`absolute bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 md:p-4 rounded-2xl z-20 shadow-lg ${idx === 0 ? 'top-[15%] -right-6 md:-right-12 max-w-[160px] md:max-w-[200px]' : 'bottom-[10%] -left-6 md:-left-12'}`}
+                                >
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shrink-0 bg-white dark:bg-white/95 p-1 shadow-sm overflow-hidden">
+                                            {idx === 0 ? (
+                                                <img src="https://wiki.agileana.com/images/6/68/PMP_project_management_professional_certification_badge.png" alt="Project Management Professional" className="w-full h-full object-contain" />
+                                            ) : (
+                                                <img src="https://www.stc.qld.edu.au/teaching-and-learning/career-pathways/PublishingImages/Nationally_Recognised_Training-logo-4FFA374E99-seeklogo_com.png" alt="Trainer" className="w-full h-full object-contain" />
+                                            )}
+                                        </div>
+                                        <div>
+                                            <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mb-0.5">{badge.sub}</p>
+                                            <p className="text-sm font-bold text-pmi-navy dark:text-white leading-tight">{badge.label}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
