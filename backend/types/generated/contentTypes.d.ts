@@ -555,6 +555,7 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     dateRange: Schema.Attribute.String & Schema.Attribute.Required;
     description: Schema.Attribute.RichText;
     duration: Schema.Attribute.String;
+    endDate: Schema.Attribute.Date;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -564,6 +565,8 @@ export interface ApiExperienceExperience extends Struct.CollectionTypeSchema {
     order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     role: Schema.Attribute.String & Schema.Attribute.Required;
+    startDate: Schema.Attribute.Date;
+    timelineRole: Schema.Attribute.String;
     type: Schema.Attribute.Enumeration<['work', 'education', 'other']> &
       Schema.Attribute.DefaultTo<'work'>;
     updatedAt: Schema.Attribute.DateTime;

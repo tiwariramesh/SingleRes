@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 @plugin "tailwindcss-animate";
 
@@ -11,7 +11,7 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -22,12 +22,46 @@
     text-wrap: balance;
   }
 
+  .liquid-outline-button {
+    @apply relative overflow-hidden bg-transparent text-pmi-navy dark:text-white border-2 border-slate-200 dark:border-slate-700 transition-all duration-300 hover:scale-105 hover:bg-white hover:text-pmi-navy hover:border-white shadow-lg hover:shadow-xl dark:hover:bg-slate-200 dark:hover:text-pmi-navy;
+  }
+
+  .liquid-outline-button::before {
+    content: '';
+    @apply absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-slate-400/20 to-transparent translate-x-[-100%];
+    transition: transform 0.6s ease;
+  }
+
+  .liquid-outline-button:hover::before {
+    @apply translate-x-[100%];
+  }
+
   .glass-card {
-    @apply bg-white/80 backdrop-blur-xl border border-white/20 shadow-glass;
+    @apply bg-white/60 backdrop-blur-3xl border border-white/40 shadow-glass ring-1 ring-white/40;
+    background-image: linear-gradient(145deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
   }
 
   .glass-card-dark {
-    @apply bg-pmi-navy/80 backdrop-blur-xl border border-white/10 shadow-glass-dark;
+    @apply bg-slate-900/60 backdrop-blur-3xl border border-white/10 shadow-glass-dark ring-1 ring-white/5;
+    background-image: linear-gradient(145deg, rgba(30, 41, 59, 0.4) 0%, rgba(30, 41, 59, 0.1) 100%);
+  }
+
+  .liquid-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-white/70;
+  }
+
+  .liquid-button {
+    @apply relative overflow-hidden bg-pmi-blue/90 backdrop-blur-md text-white shadow-lg shadow-pmi-blue/30 transition-all duration-300 hover:scale-105 hover:shadow-pmi-blue/50 border border-white/20;
+  }
+
+  .liquid-button::before {
+    content: '';
+    @apply absolute inset-0 -z-10 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%];
+    transition: transform 0.6s ease;
+  }
+
+  .liquid-button:hover::before {
+    @apply translate-x-[100%];
   }
 }
 

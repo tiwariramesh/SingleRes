@@ -16,9 +16,18 @@
             "type": "string",
             "required": true
         },
+        "timelineRole": {
+            "type": "string"
+        },
         "company": {
             "type": "string",
             "required": true
+        },
+        "startDate": {
+            "type": "date"
+        },
+        "endDate": {
+            "type": "date"
         },
         "dateRange": {
             "type": "string",
