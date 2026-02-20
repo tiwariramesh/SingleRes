@@ -2,34 +2,34 @@ export const profile = {
     firstName: "Ramesh",
     lastName: "Tiwari.",
     title: "Agile Project Manager",
-    subtitle: "Certified Scrum Master & Product Owner",
-    bio: "Results-driven Agile Project Manager with over <span class='text-pmi-blue dark:text-blue-400 font-bold'>10 years</span> of experience leading <span class='text-emerald-600 dark:text-emerald-400 font-bold'>cross-functional teams</span> to deliver complex software solutions. Expert in Scrum, Kanban, and SAFe, with a proven track record of <span class='text-pmi-blue dark:text-blue-400 font-bold'>optimizing workflows</span> and enhancing product value.",
+    subtitle: "Certified Project Management Professional (PMP®) & Project Management Trainer",
+    bio: "Experienced <span class='text-pmi-blue dark:text-blue-400 font-bold'>Project Management professional</span> with a background in delivering high-impact VET training and leading cross-functional software teams. Specialising in <span class='text-pmi-blue dark:text-blue-400 font-bold'>business-driven Agile practices</span>, strategic project delivery, and outcomes-focused coaching.",
     heroStats: [
-        { value: "10+", label: "Years Experience" },
-        { value: "50+", label: "Projects Delivered" },
-        { value: "15+", label: "Teams Led" }
+        { value: "5+", label: "Years Experience" },
+        { value: "", label: "Projects Delivered" },
+        { value: "", label: "Teams Led" }
     ],
     heroBadges: [
         { icon: "Award", sub: "Certified", label: "PMP®" },
         { icon: "Users", sub: "Experienced", label: "PM Trainer" }
     ],
     profilePhoto: {
-        url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop"
+        url: "https://media.licdn.com/dms/image/v2/D5603AQHkpFjntA0Mxg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712807361458?e=1773273600&v=beta&t=uCFvhR9kS3QeyOJjTXdnzxoSdGo0kX_KPOG0w2MCwDw"
     },
     timelineSteps: [
-        { year: "2016", label: "Early Career" },
-        { year: "2019", label: "Project Manager" },
-        { year: "2020", label: "Scrum Master" },
-        { year: "2024", label: "Senior Lead" }
+        { year: "2016", label: "Frontend Developer" },
+        { year: "2019", label: "Business Analyst" },
+        { year: "2020", label: "ICT Project Manager" },
+        { year: "2024", label: "Business & Project Management Trainer" }
     ]
 };
 
 export const experiences = [
     {
         id: 1,
-        company: "Company Alpha",
-        role: "Senior Lead",
-        startDate: "2024-01-01",
+        company: "National Institute of Technology, Perth",
+        role: "Business & Project Management Trainer",
+        startDate: "2024-04-20",
         endDate: null,
         description: [
             "Leading strategic agile transformations across the enterprise.",
@@ -42,13 +42,13 @@ export const experiences = [
     },
     {
         id: 2,
-        company: "Company Beta",
-        role: "Scrum Master",
-        startDate: "2020-01-01",
-        endDate: "2023-12-31",
+        company: "Leapfrog Technology, Kathmandu, Nepal",
+        role: "ICT Project Manager",
+        startDate: "2020-06-20",
+        endDate: "2023-07-15",
         description: [
-            "Facilitated agile ceremonies and coached teams on scrum principles.",
-            "Resolved complex impediments to maintain high team velocity."
+            "Train and assess students in project domains (cost, scope, risk) using Agile and PMBOK methodologies.",
+            "Design assessment tools and maintain a hands-on learning environment for industry-standard software like MS Project and Jira."
         ],
         logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHZyih_N7qjvDOR7SoGw1SJUHGsNS6vQ3Eg&s",
         order: 2,
@@ -57,10 +57,10 @@ export const experiences = [
     },
     {
         id: 3,
-        company: "Company Gamma",
-        role: "Project Manager",
-        startDate: "2019-01-01",
-        endDate: "2019-12-31",
+        company: "eSewa Limited, Kathmandu, Nepal",
+        role: "Business Analyst",
+        startDate: "2019-04-01",
+        endDate: "2020-06-20",
         description: [
             "Managed project schedules, budgets, and stakeholder communication.",
             "Delivered key software products on time and within scope."
@@ -72,10 +72,10 @@ export const experiences = [
     },
     {
         id: 4,
-        company: "Company Delta",
-        role: "Early Career Role",
-        startDate: "2016-01-01",
-        endDate: "2018-12-31",
+        company: "Cloudfactory, Kathmandu, Nepal",
+        role: "Frontend Developer - Intern",
+        startDate: "2016-06-01",
+        endDate: "2018-09-31",
         description: [
             "Contributed to project planning and execution in a fast-paced environment.",
             "Gained foundational experience in project coordination and agile basics."
@@ -91,7 +91,7 @@ export const services = [
     {
         id: 1,
         title: "Agile Transformation",
-        description: "Guiding organizations through their Agile adoption journey with tailored frameworks and coaching.",
+        description: "I coach teams in transitioning to Agile frameworks, ensuring high-value integration of activities within scope and quality standards.",
         icon: "Zap",
         bg: "bg-blue-100",
         color: "text-blue-600",
@@ -99,8 +99,8 @@ export const services = [
     },
     {
         id: 2,
-        title: "Project Management",
-        description: "End-to-end project management ensuring on-time, on-budget delivery with high quality standards.",
+        title: "Strategic Project Delivery",
+        description: "Leveraging a background in Information Technology, Business and Project Management, I translate complex technical requirements into achievable project roadmaps.",
         icon: "Briefcase",
         bg: "bg-green-100",
         color: "text-green-600",
@@ -108,8 +108,8 @@ export const services = [
     },
     {
         id: 3,
-        title: "Team Coaching",
-        description: "Empowering teams to self-organize, collaborate effectively, and continuously improve.",
+        title: "Capability Building",
+        description: "Through my experience as a VET trainer, I empower teams and individuals with the practical skills needed to navigate evolving industry needs.",
         icon: "Users",
         bg: "bg-purple-100",
         color: "text-purple-600",
@@ -120,38 +120,38 @@ export const services = [
 export const skills = [
     {
         id: 1,
-        title: "Methodologies",
+        title: "Project Practices",
         barColor: "bg-blue-500",
-        badge: "Expert",
+        badge: "",
         order: 1,
         skills: [
-            { name: "Scrum", desc: "Framework mastery", color: "bg-blue-500" },
-            { name: "Kanban", desc: "Flow optimization", color: "bg-green-500" },
-            { name: "SAFe", desc: "Enterprise scaling", color: "bg-purple-500" }
+            { name: "Project Approaches", desc: "Scrum, Kanban, Agile PM and Hybrid Approach", color: "bg-blue-500" },
+            { name: "Standard Practices", desc: "PMBOK 6th/7th Ed, Risk and Scope Management, Schedule and Budget Management", color: "bg-green-500" },
+            { name: "Lifecycle Management", desc: "SDLC, Requirement Elicitation, VET Compliance", color: "bg-purple-500" }
         ]
     },
     {
         id: 2,
-        title: "Tools",
+        title: "Tools & Technology",
         barColor: "bg-orange-500",
-        badge: "Proficient",
+        badge: "",
         order: 2,
         skills: [
-            { name: "JIRA", desc: "Project tracking", color: "bg-blue-600" },
-            { name: "Confluence", desc: "Documentation", color: "bg-blue-400" },
-            { name: "Trello", desc: "Task management", color: "bg-blue-300" }
+            { name: "PM Software", desc: "Jira, Confluence, MS Project, Trello", color: "bg-blue-600" },
+            { name: "Design & Dev", desc: "Figma, Adobe Suite, Python, Wordpress", color: "bg-blue-400" },
+            { name: "Collaboration", desc: "Miro, Slack, Github, Teams", color: "bg-blue-300" }
         ]
     },
     {
         id: 3,
-        title: "Soft Skills",
+        title: "Professional Skills",
         barColor: "bg-green-500",
-        badge: "Advanced",
+        badge: "",
         order: 3,
         skills: [
-            { name: "Leadership", desc: "Team motivation", color: "bg-yellow-500" },
-            { name: "Communication", desc: "Clear articulation", color: "bg-green-400" },
-            { name: "Problem Solving", desc: "Analytical thinking", color: "bg-red-500" }
+            { name: "Strategic Problem Solving", desc: "Adaptability & continuous learning", color: "bg-yellow-500" },
+            { name: "Team Leadership", desc: "Cross functional coaching and stakeholder engagement", color: "bg-green-400" },
+            { name: "Effective Communication", desc: "Technical and business communication,Conflict Resolution & Negotiation", color: "bg-red-500" }
         ]
     }
 ];

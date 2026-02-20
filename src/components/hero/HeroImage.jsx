@@ -28,10 +28,10 @@ export const HeroImage = ({ imageUrl, badges }) => {
                 {badges && badges.map((badge, idx) => (
                     <div
                         key={idx}
-                        className={`absolute bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-3 md:p-4 rounded-2xl z-20 shadow-lg ${idx === 0 ? 'top-[15%] -right-6 md:-right-12 max-w-[160px] md:max-w-[200px]' : 'bottom-[10%] -left-6 md:-left-12'}`}
+                        className={`absolute bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-2 md:p-3 rounded-xl z-20 shadow-md ${idx === 0 ? 'top-[15%] -right-4 md:-right-8 max-w-[140px] md:max-w-[170px]' : 'bottom-[10%] -left-4 md:-left-8 max-w-[140px] md:max-w-[170px]'}`}
                     >
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center shrink-0 bg-white dark:bg-white/95 p-1 shadow-sm overflow-hidden">
+                        <div className="flex items-center gap-2 md:gap-3">
+                            <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center shrink-0 bg-white dark:bg-white/95 p-1 shadow-sm overflow-hidden">
                                 {idx === 0 ? (
                                     <img src="https://wiki.agileana.com/images/6/68/PMP_project_management_professional_certification_badge.png" alt="Project Management Professional" className="w-full h-full object-contain" />
                                 ) : (
@@ -39,8 +39,8 @@ export const HeroImage = ({ imageUrl, badges }) => {
                                 )}
                             </div>
                             <div>
-                                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mb-0.5">{badge.sub}</p>
-                                <p className="text-sm font-bold text-pmi-navy dark:text-white leading-tight">{badge.label}</p>
+                                <p className="text-[10px] md:text-xs text-slate-500 dark:text-slate-400 font-medium mb-0.5">{badge.sub}</p>
+                                <p className="text-xs md:text-sm font-bold text-pmi-navy dark:text-white leading-snug">{badge.label}</p>
                             </div>
                         </div>
                     </div>

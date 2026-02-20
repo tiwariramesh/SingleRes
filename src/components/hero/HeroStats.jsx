@@ -4,7 +4,7 @@ export const HeroStats = ({ stats }) => {
     if (!stats || stats.length === 0) return null;
 
     return (
-        <div className="flex items-center gap-10 pt-8 border-t border-slate-100 dark:border-slate-800 justify-center lg:justify-start">
+        <div className="flex items-center gap-10 mt-10 lg:mt-16 pt-8 border-t border-slate-100 dark:border-slate-800 justify-center lg:justify-start">
             {stats.map((stat, idx) => (
                 <div key={idx}>
                     <p className="text-2xl font-black text-pmi-navy dark:text-white">{stat.value}</p>
