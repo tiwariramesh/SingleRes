@@ -208,7 +208,7 @@ export const socialLinks = [
     {
         id: 1,
         platform: "LinkedIn",
-        url: "https://linkedin.com/in/rameshtiwari",
+        url: "https://linkedin.com/in/iramesh",
         order: 1,
         icon: "Linkedin",
         label: "Connect on LinkedIn",
@@ -217,7 +217,7 @@ export const socialLinks = [
     {
         id: 2,
         platform: "Email",
-        url: "mailto:contact@rameshtiwari.com",
+        url: "mailto:ramestiwarii@gmail.com",
         order: 2,
         icon: "Mail",
         label: "Send an Email",
@@ -225,11 +225,11 @@ export const socialLinks = [
     },
     {
         id: 3,
-        platform: "Twitter",
-        url: "https://twitter.com/rameshtiwari",
+        platform: "X",
+        url: "https://twitter.com/ramesgunner",
         order: 3,
-        icon: "Twitter",
-        label: "Follow on Twitter",
+        icon: "X",
+        label: "Follow on X",
         showInContact: true
     }
 ];
