@@ -41,22 +41,6 @@ Thumbs.db
 # Docker
 *.env.docker
 
-# Strapi
-backend/.cache/
-backend/.tmp/
-backend/build/
-backend/dist/
-backend/.strapi-updater.json
-backend/public/uploads/*
-!backend/public/uploads/.gitkeep
-backend/exports/
-backend/.strapi/
-
-# Database
-*.sqlite
-*.sqlite3
-postgres_data/
-
 # Misc
 .cache/
 .temp/

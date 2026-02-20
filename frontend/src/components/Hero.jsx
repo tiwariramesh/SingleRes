@@ -15,17 +15,10 @@ const Hero = ({ profile }) => {
         profilePhoto
     } = profile;
 
-    // Fixed image URL logic
+    // Simplified image URL logic for standalone mock data
     const getPhotoUrl = (photo) => {
         if (!photo) return null;
-        if (photo.url) { // v5 flat
-            return photo.url.startsWith('http') ? photo.url : `${import.meta.env.VITE_STRAPI_URL}${photo.url}`;
-        }
-        if (photo.data?.attributes?.url) { // v4 nested
-            const url = photo.data.attributes.url;
-            return url.startsWith('http') ? url : `${import.meta.env.VITE_STRAPI_URL}${url}`;
-        }
-        return null;
+        return typeof photo === 'string' ? photo : (photo.url || null);
     };
 
     const imageUrl = getPhotoUrl(profilePhoto) || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop";

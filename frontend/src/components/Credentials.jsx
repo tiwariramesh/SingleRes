@@ -5,19 +5,11 @@ const Credentials = ({ educations = [], certifications = [] }) => {
     const degrees = [...educations].sort((a, b) => (a.order || 0) - (b.order || 0));
     const certs = [...certifications].sort((a, b) => (a.order || 0) - (b.order || 0));
 
-    // Helper to get image URL
+    // Simplified image URL logic for standalone mock data
     const getImageUrl = (media, fallback) => {
         if (!media) return fallback;
-        // Handle flat structure (mock data)
-        if (media.url) {
-            return media.url.startsWith('http') ? media.url : `${import.meta.env.VITE_STRAPI_URL}${media.url}`;
-        }
-        // Handle Strapi nested structure
-        if (media.data?.attributes?.url) {
-            const url = media.data.attributes.url;
-            return url.startsWith('http') ? url : `${import.meta.env.VITE_STRAPI_URL}${url}`;
-        }
-        return fallback;
+        if (typeof media === 'string') return media;
+        return media.url || fallback;
     };
 
     return (
