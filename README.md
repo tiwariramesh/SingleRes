@@ -1,6 +1,6 @@
 # SingleRes - Modern Standalone Resume Website
 
-A premium, modern resume website built with **React**, **Vite**, and **Tailwind CSS**. This version is a standalone frontend application using high-fidelity mock data, making it extremely fast and easy to deploy without needing a backend or database.
+A premium, modern resume website built with **React**, **Vite**, and **Tailwind CSS**. This version is a standalone frontend application using high-fidelity mock data, making it extremely fast and easy to deploy.
 
 ## 🚀 Features
 
@@ -15,15 +15,14 @@ A premium, modern resume website built with **React**, **Vite**, and **Tailwind 
 
 ```
 SingleRes/
-├── frontend/          # Main application directory
-│   ├── src/
-│   │   ├── components/    # Reusable UI components (Hero, Career, etc.)
-│   │   ├── data/          # Centralized mockData.js configuration
-│   │   ├── pages/         # Page components
-│   │   ├── lib/           # Utility functions
-│   │   └── App.jsx        # Main routing and entry point
-│   ├── public/        # Static assets (images, logos)
-│   └── package.json   # Dependencies and scripts
+├── src/               # React source code
+│   ├── components/    # Reusable UI components (Hero, Career, etc.)
+│   ├── data/          # Centralized mockData.js configuration
+│   ├── pages/         # Page components
+│   ├── lib/           # Utility functions
+├── public/            # Static assets (favicon, etc.)
+├── package.json       # Dependencies and scripts
+├── vite.config.js     # Vite configuration
 └── README.md          # Project documentation
 ```
 
@@ -33,7 +32,7 @@ SingleRes/
 
 ```bash
 git clone git@github.com:tiwariramesh/SingleRes.git
-cd SingleRes/frontend
+cd SingleRes
 ```
 
 ### 2. Install Dependencies
@@ -62,18 +61,18 @@ Visit `http://localhost:5173` to see the website in action.
 ## 📝 Customization
 
 To update the website content, simply edit the file:
-`frontend/src/data/mockData.js`
+`src/data/mockData.js`
 
 All profile information, experiences, skills, and credentials are centralized in this file for easy modification.
 
-## 🚢 Deployment
+## 🚢 Deployment (GitHub Pages)
 
-Since this is a static frontend application, you can deploy it to any static hosting provider like **Vercel**, **Netlify**, or **GitHub Pages**.
+This project is configured with **GitHub Actions** for automatic deployment to GitHub Pages.
 
-```bash
-npm run build
-```
-The production-ready files will be generated in the `frontend/dist/` directory.
+1. Push your changes to the `main` branch.
+2. Go to your GitHub Repository **Settings** > **Pages**.
+3. Under **Build and deployment** > **Source**, select **GitHub Actions**.
+4. The site will automatically deploy to `https://tiwariramesh.github.io/SingleRes/`.
 
 ## 👤 Author
 

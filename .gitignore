@@ -1,50 +1,24 @@
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# Dependencies
-node_modules/
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-
-# Build outputs
-dist/
-build/
-.next/
-out/
-
 # Logs
-logs/
+logs
 *.log
-*-log.txt
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 lerna-debug.log*
-.pnpm-debug.log*
 
-# OS files
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
-Thumbs.db
-*.swp
-*.swo
-*~
-
-# IDE
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# Docker
-*.env.docker
-
-# Misc
-.cache/
-.temp/
-coverage/
-*.pid
-*.seed
-*.pid.lock
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
