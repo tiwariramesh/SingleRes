@@ -1,16 +1,16 @@
 import React from 'react';
 import * as Icons from 'lucide-react';
 
+// Helper for icons
+const Icon = ({ name, size = 24, className }) => {
+    const LucideIcon = Icons[name];
+    return LucideIcon ? <LucideIcon size={size} className={className} /> : null;
+};
+
 const Services = ({ services = [] }) => {
 
     // Sort services by order
     const sortedServices = [...services].sort((a, b) => (a.order || 0) - (b.order || 0));
-
-    // Helper for icons
-    const Icon = ({ name, size = 24, className }) => {
-        const LucideIcon = Icons[name];
-        return LucideIcon ? <LucideIcon size={size} className={className} /> : null;
-    };
 
     return (
         <section id="services" className="py-16 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900/50 dark:to-slate-900 transition-colors duration-300">
