@@ -1,6 +1,6 @@
 export const profile = {
     firstName: "Ramesh",
-    lastName: "Tiwari",
+    lastName: "Tiwari.",
     title: "Agile Project Manager",
     subtitle: "Certified Scrum Master & Product Owner",
     bio: "Results-driven Agile Project Manager with over <span class='text-pmi-blue dark:text-blue-400 font-bold'>10 years</span> of experience leading <span class='text-emerald-600 dark:text-emerald-400 font-bold'>cross-functional teams</span> to deliver complex software solutions. Expert in Scrum, Kanban, and SAFe, with a proven track record of <span class='text-pmi-blue dark:text-blue-400 font-bold'>optimizing workflows</span> and enhancing product value.",
