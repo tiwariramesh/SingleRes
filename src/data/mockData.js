@@ -17,10 +17,10 @@ export const profile = {
         url: "https://media.licdn.com/dms/image/v2/D5603AQHkpFjntA0Mxg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1712807361458?e=1773273600&v=beta&t=uCFvhR9kS3QeyOJjTXdnzxoSdGo0kX_KPOG0w2MCwDw"
     },
     timelineSteps: [
-        { year: "2016", label: "Frontend Developer" },
+        { year: "2016", label: "Developer" },
         { year: "2019", label: "Business Analyst" },
-        { year: "2020", label: "ICT Project Manager" },
-        { year: "2024", label: "Business & Project Management Trainer" }
+        { year: "2020", label: "Project Manager" },
+        { year: "2024", label: "Trainer" }
     ]
 };
 
@@ -43,7 +43,7 @@ export const experiences = [
     {
         id: 2,
         company: "Leapfrog Technology, Kathmandu, Nepal",
-        role: "ICT Project Manager",
+        role: "Project Manager",
         startDate: "2020-06-20",
         endDate: "2023-07-15",
         description: [

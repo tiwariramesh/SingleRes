@@ -24,7 +24,7 @@ National Institute of Technology, Perth, Australia (Apr 2024 – Present)
 - Ensure the delivery and assessment methods comply with relevant VET regulations, focusing on developing competencies in key project management areas such as stakeholder management, quality control, and resource optimisation.
 - Utilise advanced project management software, mainly MS Project, Libre, Jira, Miro and Trello, and tools for teaching concepts such as scheduling, risk analysis, and procurement planning, providing students with practical experience in current industry tools.
 
-Project Manager (Remote)
+Project Manager
 Leapfrog Technology Inc., Seattle, Washington, US (Jul 2022 – Jul 2023) | Kathmandu, Nepal (Jul 2020 – Jun 2022)
 (Note: Promoted from Associate Project Manager Jul 2020 to PM Jul 2022)
 - Led and managed medium-scale projects through the entire software development lifecycle using Agile development practices.
@@ -72,3 +72,6 @@ COURSES AND TRAINING
 - Certified Associate in Project Management (CAPM), Project Management Institute (2025)
 - Google Project Management Certificate, Coursera (2025)
 - Certified Scrum Product Owner (CSPO), Scrum Alliance (2019)
+
+REFERENCES
+Available upon request

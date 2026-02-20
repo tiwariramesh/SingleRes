@@ -31,7 +31,7 @@ const ResumeSection = () => {
                             asChild
                             className="h-10 px-5 rounded-xl bg-pmi-navy hover:bg-black dark:bg-blue-600 dark:hover:bg-blue-700 text-white font-bold text-sm flex items-center gap-2 transition-all hover:scale-[1.02] shadow-lg shadow-pmi-navy/5"
                         >
-                            <a href="https://github.com/tiwariramesh/SingleRes/raw/main/Ramesh_Tiwari_Resume.pdf" download>
+                            <a href="https://github.com/tiwariramesh/SingleRes/raw/main/src/assets/RameshTiwari_Resume_PDF.pdf" download>
                                 <Download size={16} /> Download
                             </a>
                         </Button>
@@ -53,7 +53,7 @@ const ResumeSection = () => {
                             variant="outline"
                             className="h-10 px-5 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-bold text-sm flex items-center gap-2 hover:bg-emerald-500 hover:text-white dark:hover:bg-emerald-600 hover:border-emerald-500 transition-all hover:scale-[1.02]"
                         >
-                            <a href="https://github.com/tiwariramesh/SingleRes/raw/main/Ramesh_Tiwari_ATS.txt" download>
+                            <a href="https://github.com/tiwariramesh/SingleRes/raw/main/src/assets/RameshTiwari_Resume_ATS.txt" download>
                                 <Download size={16} /> Download
                             </a>
                         </Button>
