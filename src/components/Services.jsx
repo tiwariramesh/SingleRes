@@ -12,13 +12,13 @@ const Services = ({ services = [] }) => {
     const sortedServices = [...services].sort((a, b) => (a.order || 0) - (b.order || 0));
 
     return (
-        <section id="services" className="section-shell bg-surface">
+        <section id="services" className="section-shell">
             <div className="container-shell">
-                <div className="mb-16">
+                <div className="mb-16 text-center md:text-left">
                     <h2 className="text-4xl font-black text-pmi-navy dark:text-white tracking-tight">
                         Driving Excellence with <br /><span className="text-pmi-blue dark:text-blue-400">Professional Services.</span>
                     </h2>
-                    <p className="text-slate-500 dark:text-slate-400 font-medium mt-6 max-w-2xl text-xs">
+                    <p className="text-slate-500 dark:text-slate-400 font-medium mt-6 max-w-2xl text-xs mx-auto md:mx-0">
                         Empowering organizations through strategic agile implementation and leadership development.
                     </p>
                 </div>

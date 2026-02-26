@@ -4,13 +4,13 @@ const Competencies = ({ skills = [] }) => {
     const sortedSkills = [...skills].sort((a, b) => (a.order || 0) - (b.order || 0));
 
     return (
-        <section id="skills" className="section-shell">
+        <section id="skills" className="pb-16 pt-8 md:pb-24 lg:pb-32">
             <div className="container-shell">
-                <div className="mb-12">
+                <div className="mb-12 text-center md:text-left">
                     <h2 className="text-4xl font-black text-pmi-navy dark:text-white tracking-tight mb-6">
                         Core <span className="text-pmi-blue dark:text-blue-400">Competencies.</span>
                     </h2>
-                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium max-w-3xl leading-relaxed">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium max-w-3xl leading-relaxed mx-auto md:mx-0">
                         A blend of strategic leadership, technical acumen, and proven methodologies to drive enterprise transformation.
                     </p>
                 </div>

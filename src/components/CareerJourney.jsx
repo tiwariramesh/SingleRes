@@ -8,13 +8,13 @@ const CareerJourney = ({ experiences = [] }) => {
     const { sortedExperiences, renderedSteps } = useTimelineData(experiences, careerJourneyTimeline);
 
     return (
-        <section id="experience" className="section-shell bg-surface overflow-hidden">
+        <section id="experience" className="section-shell overflow-hidden">
             <div className="container-shell">
                 <div className="mb-14 text-center md:text-left">
                     <h2 className="text-4xl font-black text-pmi-navy dark:text-white tracking-tight mb-6">
                         Career <span className="text-pmi-blue dark:text-blue-400">Journey.</span>
                     </h2>
-                    <p className="section-subheading">
+                    <p className="section-subheading mx-auto md:mx-0">
                         Progressive impact across global organisations and transformative initiatives
                     </p>
                 </div>

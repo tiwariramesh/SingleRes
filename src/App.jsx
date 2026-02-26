@@ -32,7 +32,11 @@ function App() {
         />
         <Route
           path="/privacy-policy"
-          element={<PrivacyPolicy />}
+          element={<PrivacyPolicy
+            profile={profile}
+            socialLinks={socialLinks}
+            services={services}
+          />}
         />
       </Routes>
     </BrowserRouter>

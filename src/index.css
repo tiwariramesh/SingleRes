@@ -47,8 +47,9 @@
   --colour-violet-3: #B5179E;
   --colour-violet-4: #3F37C9;
 
-  --colour-page-top: #F9FBFF;
-  --colour-page-bottom: #EAF0FF;
+  --colour-page-top: #ffffff;
+  --colour-page-bottom: #f8fafc;
+  --bg-gradient: linear-gradient(to bottom, rgba(59, 130, 246, 0.02) 0%, rgba(139, 92, 246, 0.03) 25%, rgba(139, 92, 246, 0.05) 50%, rgba(59, 130, 246, 0.05) 75%, rgba(59, 130, 246, 0.08) 100%);
 
   --colour-background: #FFFFFF;
   --colour-foreground: #1D2939;
@@ -70,8 +71,9 @@
 }
 
 .dark {
-  --colour-page-top: #030712;
-  --colour-page-bottom: #0E1730;
+  --colour-page-top: #020617;
+  --colour-page-bottom: #0f172a;
+  --bg-gradient: linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 25%, rgba(139, 92, 246, 0.1) 50%, rgba(59, 130, 246, 0.1) 75%, rgba(59, 130, 246, 0.15) 100%);
 
   --colour-background: #020617;
   --colour-foreground: #F8FAFC;
@@ -142,9 +144,9 @@
   body {
     @apply text-foreground;
     background-color: var(--colour-page-top);
-    background-image: linear-gradient(180deg, var(--colour-page-top) 0%, var(--colour-page-bottom) 100%);
+    background-image: var(--bg-gradient);
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     font-family: var(--font-sans);
     font-size: var(--text-base);
     text-rendering: optimizeLegibility;
@@ -190,7 +192,7 @@
 
   .hero-title-gradient {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(90deg, #560BAD 0%, #7209B7 35%, #B5179E 70%, #3F37C9 100%);
+    background-image: linear-gradient(90deg, #043174 0%, #115986 35%, #4450d1 70%, #004aca 100%);
   }
 
   .section-subheading {

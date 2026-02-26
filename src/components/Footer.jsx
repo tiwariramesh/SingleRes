@@ -12,11 +12,14 @@ const Footer = ({ firstName, lastName, socialLinks = [], services = [] }) => {
     const linkedInLink = socialLinks.find(l => l.platform === 'LinkedIn');
 
     return (
-        <footer id="contact" className="border-t border-border bg-surface pt-16 pb-8">
+        <footer id="contact" className="border-t border-border pt-16 pb-8">
             <div className="container-shell">
                 <div className="grid lg:grid-cols-4 gap-12 mb-16">
                     <div className="lg:col-span-2 space-y-6">
-                        <h2 className="section-heading"><span className="heading-first-word">Ready</span> to scale together?</h2>
+                        <h2 className="section-heading">
+                            <span className="text-foreground dark:text-white">Ready to </span>
+                            <span className="text-brand">scale together</span>?
+                        </h2>
                         <p className="section-subheading max-w-md">Let’s discuss how we can drive project success and team growth through practical, proven delivery approaches.</p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             {emailLink && (

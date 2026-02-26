@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Moon, Sun, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTheme } from '@/hooks/useTheme';
 import { socialLinks } from '@/data/mockData';
 import { NavItem } from './navbar/NavItem';
@@ -19,6 +19,8 @@ const navItems = [
 const Navbar = ({ firstName, lastName }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const { theme, setTheme } = useTheme();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     // Get LinkedIn URL
     const linkedinUrl = socialLinks.find(l => l.platform.toLowerCase() === 'linkedin')?.url || '#';
@@ -34,6 +36,18 @@ const Navbar = ({ firstName, lastName }) => {
     const scrollToSection = (e, href) => {
         if (href.startsWith('#')) {
             e.preventDefault();
+
+            // If we are not on the main homepage, navigate back to it
+            if (location.pathname !== '/') {
+                if (href === '#') {
+                    navigate('/');
+                } else {
+                    navigate(`/${href}`);
+                }
+                return;
+            }
+
+            // Standard scrolling behaviour for the homepage
             if (href === '#') {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
@@ -50,18 +64,31 @@ const Navbar = ({ firstName, lastName }) => {
     };
 
     return (
-        <div className="fixed left-0 right-0 top-4 z-50 flex justify-center px-4">
+        <div className={`fixed left-0 right-0 z-50 flex justify-center px-4 transition-all duration-300 ${isScrolled ? 'top-2' : 'top-6'}`}>
             <nav className={`
-        interactive relative flex w-full max-w-6xl items-center justify-between rounded-full border border-border/80 bg-background/85 px-4 py-2 backdrop-blur-xl md:px-6
-        ${isScrolled ? 'shadow-sm' : ''}
+        interactive relative flex w-full items-center justify-between rounded-full border border-border/80 px-4 transition-all duration-300 backdrop-blur-3xl md:px-6
+        ${isScrolled ? 'max-w-5xl py-2 bg-background/60 shadow-lg shadow-black/5 dark:shadow-black/20 text-sm' : 'max-w-6xl py-3 bg-background/40 shadow-md text-base'}
       `}>
                 <Link to="/" className="flex items-center gap-2.5 cursor-pointer" onClick={(e) => scrollToSection(e, '#')}>
-                    <img
-                        src="/favicon.svg"
-                        alt="Logo"
-                        className="h-8 w-8 rounded-lg shadow-sm md:h-9 md:w-9"
-                    />
-                    <span className="font-black text-pmi-navy dark:text-white tracking-[0.05em] text-xs md:text-sm whitespace-nowrap">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 100 100"
+                        className={`rounded-lg shadow-sm transition-all duration-300 bg-pmi-blue dark:bg-slate-400 ${isScrolled ? 'h-7 w-7 md:h-8 md:w-8' : 'h-9 w-9 md:h-10 md:w-10'}`}
+                    >
+                        <text
+                            x="50%"
+                            y="52%"
+                            dominantBaseline="middle"
+                            textAnchor="middle"
+                            fontFamily="inherit"
+                            fontWeight="900"
+                            fontSize="44"
+                            className="fill-white dark:fill-pmi-navy"
+                        >
+                            RT
+                        </text>
+                    </svg>
+                    <span className={`font-black tracking-[0.05em] whitespace-nowrap transition-all duration-300 text-pmi-navy dark:text-white ${isScrolled ? 'text-xs md:text-sm' : 'text-sm md:text-base'}`}>
                         {firstName?.toUpperCase() || 'RAMESH'} <span className="text-pmi-blue">{lastName?.toUpperCase() || 'TIWARI.'}</span>
                     </span>
                 </Link>

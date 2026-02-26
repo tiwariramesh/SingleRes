@@ -8,10 +8,11 @@ import CareerJourney from '../components/CareerJourney';
 import Credentials from '../components/Credentials';
 import Services from '../components/Services';
 import { Footer } from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 const Home = ({ profile, experiences, services, socialLinks, skills, educations, certifications }) => {
     return (
-        <div className="relative min-h-screen bg-background font-sans text-foreground selection:bg-brand selection:text-white overflow-hidden">
+        <div className="relative min-h-screen font-sans text-foreground selection:bg-brand selection:text-white overflow-hidden">
             <Navbar
                 firstName={profile?.firstName}
                 lastName={profile?.lastName}
@@ -37,6 +38,7 @@ const Home = ({ profile, experiences, services, socialLinks, skills, educations,
                     services={services}
                 />
             </div>
+            <ScrollToTop />
         </div>
     );
 };
