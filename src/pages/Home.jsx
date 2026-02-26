@@ -9,11 +9,10 @@ import Credentials from '../components/Credentials';
 import Services from '../components/Services';
 import { Footer } from '../components/Footer';
 
-const Home = ({ profile, initials, experiences, services, socialLinks, skills, educations, certifications }) => {
+const Home = ({ profile, experiences, services, socialLinks, skills, educations, certifications }) => {
     return (
         <div className="relative min-h-screen bg-background font-sans text-foreground selection:bg-brand selection:text-white overflow-hidden">
             <Navbar
-                initials={initials}
                 firstName={profile?.firstName}
                 lastName={profile?.lastName}
                 socialLinks={socialLinks}
@@ -21,6 +20,7 @@ const Home = ({ profile, initials, experiences, services, socialLinks, skills, e
 
             <main className="relative z-10">
                 <Hero profile={profile} />
+                <div className="mx-auto w-1/2 border-t border-border/70" aria-hidden="true" />
                 <AboutMe />
                 <ResumeSection />
                 <Competencies skills={skills} />

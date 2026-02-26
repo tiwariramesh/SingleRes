@@ -12,7 +12,7 @@ const Credentials = ({ educations = [], certifications = [] }) => {
 
     return (
         <section id="credentials" className="py-16 bg-slate-50 dark:bg-slate-900/50 transition-colors duration-300">
-            <div className="container mx-auto px-4 max-w-[1400px]">
+            <div className="container-shell">
                 <div className="mb-10">
                     <h2 className="text-4xl font-black text-pmi-navy dark:text-white tracking-tight leading-tight">
                         Learning & <span className="text-pmi-blue dark:text-blue-400">Credentials.</span>

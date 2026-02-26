@@ -19,7 +19,7 @@ const Hero = ({ profile }) => {
     };
 
     return (
-        <section id="home" className="section-shell overflow-hidden pb-12 pt-28 lg:pt-36">
+        <section id="home" className="section-shell overflow-hidden pb-6 pt-28 lg:pt-36">
             <div className="container-shell grid items-center gap-12 lg:grid-cols-12">
                 <div className="order-2 lg:order-1 lg:col-span-7">
                     <p className="mb-3 inline-flex items-center rounded-full border border-border bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">

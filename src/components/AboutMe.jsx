@@ -54,8 +54,8 @@ const AboutMe = () => {
     const activeTabData = tabData.find(t => t.id === activeTab) || tabData[0];
 
     return (
-        <section id="about" className="py-16 bg-gradient-to-b from-white via-slate-50 to-white dark:from-slate-950 dark:via-slate-900/50 dark:to-slate-950 overflow-hidden transition-colors duration-300">
-            <div className="container mx-auto px-4 max-w-[1400px]">
+        <section id="about" className="pt-8 pb-16 bg-gradient-to-b from-white via-slate-50 to-white dark:from-slate-950 dark:via-slate-900/50 dark:to-slate-950 overflow-hidden transition-colors duration-300">
+            <div className="container-shell">
                 <div className="mb-12 text-center md:text-left">
                     <h2 className="text-4xl font-black text-pmi-navy dark:text-white tracking-tight mb-4">
                         About <span className="text-pmi-blue dark:text-blue-400">Me.</span>

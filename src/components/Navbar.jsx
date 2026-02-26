@@ -16,7 +16,7 @@ const navItems = [
     { label: 'Contact', href: '#contact' },
 ];
 
-const Navbar = ({ initials, firstName, lastName }) => {
+const Navbar = ({ firstName, lastName }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const { theme, setTheme } = useTheme();
 
@@ -56,9 +56,11 @@ const Navbar = ({ initials, firstName, lastName }) => {
         ${isScrolled ? 'shadow-sm' : ''}
       `}>
                 <Link to="/" className="flex items-center gap-2.5 cursor-pointer" onClick={(e) => scrollToSection(e, '#')}>
-                    <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg bg-brand text-xs font-bold text-white shadow-sm md:h-9 md:w-9 md:text-sm">
-                        {initials || 'RT'}
-                    </div>
+                    <img
+                        src="/favicon.svg"
+                        alt="Logo"
+                        className="h-8 w-8 rounded-lg shadow-sm md:h-9 md:w-9"
+                    />
                     <span className="font-black text-pmi-navy dark:text-white tracking-[0.05em] text-xs md:text-sm whitespace-nowrap">
                         {firstName?.toUpperCase() || 'RAMESH'} <span className="text-pmi-blue">{lastName?.toUpperCase() || 'TIWARI.'}</span>
                     </span>

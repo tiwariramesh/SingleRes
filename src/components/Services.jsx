@@ -28,18 +28,18 @@ const Services = ({ services = [] }) => {
                         {sortedServices.map((service, index) => (
                             <div
                                 key={index}
-                                className="surface-card interactive group cursor-default rounded-[1.5rem] p-5"
+                                className="surface-card interactive group flex h-full cursor-default flex-col rounded-[1.5rem] p-5"
                             >
-                                <div className="mb-3 flex items-start gap-3">
-                                    <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${service.bg} ${service.color}`}>
+                                <div className="mb-3 flex items-center gap-3">
+                                    <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${service.bg} ${service.color}`}>
                                         <Icon name={service.icon} size={20} />
                                     </div>
                                     <div className="min-w-0 flex-1">
-                                        <h3 className="text-xl font-bold leading-tight tracking-tight text-foreground">{service.title}</h3>
+                                        <h3 className="text-lg font-bold leading-tight tracking-tight text-foreground">{service.title}</h3>
                                     </div>
                                 </div>
-                                <h3 className="text-2xl font-black text-pmi-navy dark:text-slate-100 tracking-tight">{service.title}</h3>
-                                <p className="text-slate-600 dark:text-slate-400 text-xs mt-4 leading-relaxed font-medium">
+
+                                <p className="mt-1 flex-1 text-xs font-medium leading-relaxed text-slate-600 dark:text-slate-400">
                                     {service.description}
                                 </p>
 
