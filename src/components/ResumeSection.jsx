@@ -36,20 +36,19 @@ const ResumeSection = () => {
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-6">
-                    {/* Visual CV */}
-                    <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl flex items-center justify-between gap-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div className="surface-card flex items-center justify-between gap-4 p-6">
                         <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-2xl bg-pmi-blue/10 dark:bg-pmi-blue/20 flex items-center justify-center text-pmi-blue dark:text-blue-400 shrink-0">
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand/10 text-brand">
                                 <FileText size={24} />
                             </div>
                             <div>
-                                <h3 className="text-lg font-bold text-pmi-navy dark:text-slate-100 leading-tight">Visual PDF</h3>
-                                <p className="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">Human-Focused</p>
+                                <h3 className="text-lg font-bold text-foreground leading-tight">Visual PDF</h3>
+                                <p className="text-[11px] uppercase tracking-wider text-muted-foreground">Human-focused</p>
                             </div>
                         </div>
                         <Button
                             asChild
-                            className="h-10 px-5 rounded-xl bg-pmi-navy hover:bg-black dark:bg-blue-600 dark:hover:bg-blue-700 text-white font-bold text-sm flex items-center gap-2 transition-all hover:scale-[1.02] shadow-lg shadow-pmi-navy/5"
+                            className="h-10 rounded-xl px-5 text-sm font-semibold"
                         >
                             <a href="https://github.com/tiwariramesh/SingleRes/raw/main/src/assets/RameshTiwari_Resume_PDF.pdf" download>
                                 <Download size={16} /> Download
@@ -57,21 +56,20 @@ const ResumeSection = () => {
                         </Button>
                     </div>
 
-                    {/* ATS Version */}
-                    <div className="bg-white dark:bg-slate-900 p-6 rounded-3xl flex items-center justify-between gap-4 border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <div className="surface-card flex items-center justify-between gap-4 p-6">
                         <div className="flex items-center gap-4">
-                            <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 dark:bg-emerald-500/20 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
+                            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
                                 <FileType size={24} />
                             </div>
                             <div>
-                                <h3 className="text-lg font-bold text-pmi-navy dark:text-slate-100 leading-tight">Plain Text</h3>
-                                <p className="text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-wider">ATS-Friendly</p>
+                                <h3 className="text-lg font-bold text-foreground leading-tight">Plain text</h3>
+                                <p className="text-[11px] uppercase tracking-wider text-muted-foreground">ATS-friendly</p>
                             </div>
                         </div>
                         <Button
                             onClick={handleDownloadATS}
                             variant="outline"
-                            className="h-10 px-5 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-bold text-sm flex items-center gap-2 hover:bg-emerald-500 hover:text-white dark:hover:bg-emerald-600 hover:border-emerald-500 transition-all hover:scale-[1.02]"
+                            className="h-10 rounded-xl px-5 text-sm font-semibold hover:border-[#6A317F] hover:bg-[#6A317F] hover:text-white"
                         >
                             Download
                         </Button>
@@ -79,7 +77,7 @@ const ResumeSection = () => {
                 </div>
 
                 <div className="mt-8 text-center">
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">Verified & Updated: Feb 2026</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">Verified and updated: Feb 2026</p>
                 </div>
             </div>
         </section>

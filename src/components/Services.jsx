@@ -9,12 +9,11 @@ const Icon = ({ name, size = 24, className }) => {
 
 const Services = ({ services = [] }) => {
 
-    // Sort services by order
     const sortedServices = [...services].sort((a, b) => (a.order || 0) - (b.order || 0));
 
     return (
-        <section id="services" className="py-16 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900/50 dark:to-slate-900 transition-colors duration-300">
-            <div className="container mx-auto px-4 max-w-[1400px]">
+        <section id="services" className="section-shell bg-surface">
+            <div className="container-shell">
                 <div className="mb-16">
                     <h2 className="text-4xl font-black text-pmi-navy dark:text-white tracking-tight">
                         Driving Excellence with <br /><span className="text-pmi-blue dark:text-blue-400">Professional Services.</span>
@@ -29,15 +28,27 @@ const Services = ({ services = [] }) => {
                         {sortedServices.map((service, index) => (
                             <div
                                 key={index}
-                                className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-10 rounded-[2.5rem] hover:shadow-xl hover:shadow-pmi-blue/10 dark:hover:shadow-pmi-blue/20 hover:transform hover:-translate-y-2 transition-all duration-500 group cursor-default"
+                                className="surface-card interactive group cursor-default rounded-[1.5rem] p-5"
                             >
-                                <div className={`w-16 h-16 rounded-2xl ${service.bg} ${service.color} dark:bg-white/10 dark:text-blue-400 flex items-center justify-center mb-8 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 shadow-xl shadow-black/5`}>
-                                    <Icon name={service.icon} size={32} />
+                                <div className="mb-3 flex items-start gap-3">
+                                    <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${service.bg} ${service.color}`}>
+                                        <Icon name={service.icon} size={20} />
+                                    </div>
+                                    <div className="min-w-0 flex-1">
+                                        <h3 className="text-xl font-bold leading-tight tracking-tight text-foreground">{service.title}</h3>
+                                    </div>
                                 </div>
                                 <h3 className="text-2xl font-black text-pmi-navy dark:text-slate-100 tracking-tight">{service.title}</h3>
                                 <p className="text-slate-600 dark:text-slate-400 text-xs mt-4 leading-relaxed font-medium">
                                     {service.description}
                                 </p>
+
+                                <div className="mt-4 flex items-center justify-between border-t border-border pt-3">
+                                    <span className="rounded-md bg-muted px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-brand">
+                                        {service.category || 'Service'}
+                                    </span>
+                                    <Icon name="ArrowRight" size={16} className="text-muted-foreground" />
+                                </div>
                             </div>
                         ))}
                     </div>

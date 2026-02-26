@@ -9,26 +9,21 @@ export const TimelineItem = ({
     descPoints
 }) => {
     return (
-        <motion.div
-            whileHover={{ y: -4, scale: 1.01 }}
-            className="flex flex-col bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm rounded-[1.5rem] p-6 group relative overflow-hidden h-full transition-all duration-300"
-        >
-            {/* Header: Role, Company, Dates */}
+        <div className="interactive flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-border bg-card p-6 shadow-sm group hover:-translate-y-1">
             <div className="relative mb-6">
                 <div className="flex items-start gap-4">
-                    {/* Small Logo */}
-                    <div className="w-10 h-10 rounded-full border border-slate-100 dark:border-slate-800 shadow-sm flex items-center justify-center shrink-0 overflow-hidden mt-1">
+                    <div className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-muted shadow-sm">
                         {exp.logo ? (
                             <img src={exp.logo} alt={exp.company} className="w-full h-full object-cover" />
                         ) : (
-                            <div className="w-full h-full flex items-center justify-center text-white" style={{ backgroundColor: colorValue }}>
-                                <span className="font-bold text-[8px]">{exp.company?.substring(0, 2).toUpperCase()}</span>
+                            <div className="flex h-full w-full items-center justify-center bg-foreground text-background">
+                                <span className="text-[8px] font-bold">{exp.company?.substring(0, 2).toUpperCase()}</span>
                             </div>
                         )}
                     </div>
 
                     <div className="flex-1 min-w-0">
-                        <h3 className="text-[17px] font-black text-pmi-navy dark:text-white group-hover:text-pmi-blue dark:group-hover:text-blue-400 transition-colors leading-tight mb-2 break-words">
+                        <h3 className="mb-2 break-words font-display text-xl font-bold leading-tight text-foreground">
                             {exp.role}
                         </h3>
 
@@ -40,12 +35,16 @@ export const TimelineItem = ({
                             <span className="text-[11px] font-black text-pmi-blue dark:text-blue-400 uppercase tracking-tight">
                                 {displayDate}
                             </span>
+                            {duration && (
+                                <span className="rounded-md bg-muted px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                                    {duration}
+                                </span>
+                            )}
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Description Points */}
             <ul className="space-y-2 relative z-10 flex-grow">
                 {descPoints.map((point, i) => (
                     <li key={i} className="flex items-start gap-2 text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
@@ -54,12 +53,6 @@ export const TimelineItem = ({
                     </li>
                 ))}
             </ul>
-
-            {/* Minimal Decorative Gradient blob */}
-            <div
-                className="absolute -right-4 -bottom-4 w-16 h-16 rounded-full opacity-5 blur-2xl pointer-events-none"
-                style={{ backgroundColor: colorValue }}
-            />
-        </motion.div>
+        </div>
     );
 };

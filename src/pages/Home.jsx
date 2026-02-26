@@ -1,26 +1,17 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import AboutMe from '../components/AboutMe';
+import ResumeSection from '../components/ResumeSection';
+import Competencies from '../components/Competencies';
+import CareerJourney from '../components/CareerJourney';
+import Credentials from '../components/Credentials';
+import Services from '../components/Services';
 import { Footer } from '../components/Footer';
-
-// Lazy load heavy components below the fold
-const ResumeSection = lazy(() => import('../components/ResumeSection'));
-const Competencies = lazy(() => import('../components/Competencies'));
-const AboutMe = lazy(() => import('../components/AboutMe'));
-const CareerJourney = lazy(() => import('../components/CareerJourney'));
-const Credentials = lazy(() => import('../components/Credentials'));
-const Services = lazy(() => import('../components/Services'));
-
-// Simple loading fallback
-const SectionLoader = () => (
-    <div className="py-20 flex justify-center items-center">
-        <div className="w-8 h-8 rounded-full border-4 border-pmi-blue border-t-transparent animate-spin"></div>
-    </div>
-);
 
 const Home = ({ profile, initials, experiences, services, socialLinks, skills, educations, certifications }) => {
     return (
-        <div className="relative min-h-screen bg-white dark:bg-slate-950 font-sans text-pmi-navy dark:text-white selection:bg-pmi-blue selection:text-white transition-colors duration-300 overflow-hidden">
+        <div className="relative min-h-screen bg-background font-sans text-foreground selection:bg-brand selection:text-white overflow-hidden">
             <Navbar
                 initials={initials}
                 firstName={profile?.firstName}
@@ -29,7 +20,6 @@ const Home = ({ profile, initials, experiences, services, socialLinks, skills, e
             />
 
             <main className="relative z-10">
-                {/* Hero is critical, load immediately */}
                 <Hero profile={profile} />
 
                 {/* Lazy load the rest */}

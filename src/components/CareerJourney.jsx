@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTimelineData } from '@/hooks/useTimelineData';
+import { careerJourneyTimeline } from '@/data/mockData';
 import { TimelineScale } from './career/TimelineScale';
 import { TimelineItem } from './career/TimelineItem';
 
@@ -19,13 +20,11 @@ const CareerJourney = ({ experiences = [] }) => {
                     </p>
                 </div>
 
-                {/* Horizontal Timeline (Desktop) */}
                 <TimelineScale steps={renderedSteps} />
 
                 <div className="relative mt-8">
                     <div className="grid md:grid-cols-2 gap-8">
                         {sortedExperiences.map((exp, index) => {
-                            // Logic moved here for now or could be further extracted
                             const descPoints = typeof exp.description === 'string'
                                 ? exp.description.split('\n').map(s => s.replace(/^-\s*/, '').trim()).filter(s => s)
                                 : (Array.isArray(exp.description) ? exp.description : []);

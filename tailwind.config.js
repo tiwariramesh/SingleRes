@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+    darkMode: 'class',
     content: [
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,6 +9,12 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                display: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+                brand: 'var(--colour-brand)',
+                accent: 'var(--colour-accent)',
+                surface: 'var(--colour-surface)',
             },
             animation: {
                 'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
@@ -25,8 +32,8 @@ export default {
                 },
             },
             boxShadow: {
-                'glass': '0 8px 32px rgba(0, 0, 0, 0.08)',
-                'glass-dark': '0 8px 32px rgba(0, 0, 0, 0.2)',
+                'glass': 'var(--shadow-glass)',
+                'glass-dark': 'var(--shadow-glass)',
             },
         },
     },

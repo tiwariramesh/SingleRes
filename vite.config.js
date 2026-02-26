@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      "@": path.resolve(process.cwd(), "./src"),
+      "@": fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
 })

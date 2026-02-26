@@ -8,7 +8,7 @@ export const NavItem = ({ label, href, onClick }) => {
             className="text-xs font-bold text-pmi-navy dark:text-white hover:text-pmi-blue dark:hover:text-blue-400 transition-all duration-200 tracking-normal relative group"
         >
             {label}
-            <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-pmi-blue dark:bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute -bottom-1 left-0 h-0.5 w-0 rounded-full bg-brand interactive group-hover:w-full"></span>
         </a>
     );
 };

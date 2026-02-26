@@ -11,9 +11,8 @@ const navItems = [
     { label: 'Home', href: '#' },
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Experiences', href: '#experience' },
+    { label: 'Experience', href: '#experience' },
     { label: 'Credentials', href: '#credentials' },
-    { label: 'Services', href: '#services' },
     { label: 'Contact', href: '#contact' },
 ];
 
@@ -51,18 +50,13 @@ const Navbar = ({ initials, firstName, lastName }) => {
     };
 
     return (
-        <div className={`fixed top-4 left-0 right-0 z-50 transition-all duration-300 px-4 flex justify-center`}>
+        <div className="fixed left-0 right-0 top-4 z-50 flex justify-center px-4">
             <nav className={`
-        relative flex items-center justify-between
-        py-1.5 px-4 md:px-6
-        glass-card dark:glass-card-dark
-        rounded-full transition-all duration-300
-        w-full max-w-6xl
-        ${isScrolled ? 'md:py-1.5 transform scale-[0.98]' : 'md:py-2.5'}
+        interactive relative flex w-full max-w-6xl items-center justify-between rounded-full border border-border/80 bg-background/85 px-4 py-2 backdrop-blur-xl md:px-6
+        ${isScrolled ? 'shadow-sm' : ''}
       `}>
-                {/* Logo & Name */}
                 <Link to="/" className="flex items-center gap-2.5 cursor-pointer" onClick={(e) => scrollToSection(e, '#')}>
-                    <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-pmi-blue flex items-center justify-center text-white font-bold text-xs md:text-sm shadow-lg shadow-pmi-blue/30 overflow-hidden">
+                    <div className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg bg-brand text-xs font-bold text-white shadow-sm md:h-9 md:w-9 md:text-sm">
                         {initials || 'RT'}
                     </div>
                     <span className="font-black text-pmi-navy dark:text-white tracking-[0.05em] text-xs md:text-sm whitespace-nowrap">
@@ -70,7 +64,6 @@ const Navbar = ({ initials, firstName, lastName }) => {
                     </span>
                 </Link>
 
-                {/* Desktop Navigation */}
                 <div className="hidden lg:flex items-center gap-8">
                     {navItems.map((item) => (
                         <NavItem
@@ -82,11 +75,10 @@ const Navbar = ({ initials, firstName, lastName }) => {
                     ))}
                 </div>
 
-                {/* Action Buttons (Desktop) */}
-                <div className="hidden lg:flex items-center gap-4">
+                <div className="hidden lg:flex items-center gap-2">
                     <button
                         onClick={toggleTheme}
-                        className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-colors"
+                        className="interactive inline-flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background hover:bg-muted"
                         aria-label="Toggle theme"
                     >
                         {theme === 'dark' ? (
@@ -100,15 +92,13 @@ const Navbar = ({ initials, firstName, lastName }) => {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <Button
-                            className="rounded-full px-6 py-6 bg-pmi-blue hover:bg-pmi-navy dark:hover:bg-blue-600 text-white text-[13px] font-black tracking-wider transition-all duration-300 shadow-lg shadow-pmi-blue/25 hover:shadow-pmi-navy/25"
-                        >
-                            LET'S CONNECT
+                        <Button className="rounded-full px-4 text-sm font-semibold">
+                            <Linkedin className="h-4 w-4" />
+                            Let’s connect
                         </Button>
                     </a>
                 </div>
 
-                {/* Mobile Menu */}
                 <MobileMenu
                     navItems={navItems}
                     toggleTheme={toggleTheme}

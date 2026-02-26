@@ -5,11 +5,9 @@ export const TimelineScale = ({ steps }) => {
 
     return (
         <div className="hidden lg:block relative mb-32 mt-12 px-6">
-            {/* Main Line with Gradient */}
-            <div className="absolute top-[8px] left-6 right-6 h-[3px] bg-slate-200 dark:bg-slate-800 rounded-full" />
-            <div className="absolute top-[8px] left-6 right-6 h-[3px] bg-gradient-to-r from-slate-300 via-pmi-blue to-pmi-blue dark:from-slate-700 dark:via-blue-500 dark:to-blue-500 rounded-full opacity-80" />
+            <div className="absolute left-6 right-6 top-[8px] h-[4px] rounded-full bg-border/60" />
+            <div className="absolute left-6 right-6 top-[8px] h-[4px] rounded-full bg-gradient-to-r from-[#005FB9] via-[#3F37C9] to-[#60A5FA] opacity-90" />
 
-            {/* Steps Markers */}
             <div className="relative w-full px-6">
                 {steps.map((step, i) => (
                     <div
@@ -20,19 +18,18 @@ export const TimelineScale = ({ steps }) => {
                             transform: step.isStart ? 'none' : step.isEnd ? 'translateX(-100%)' : 'translateX(-50%)'
                         }}
                     >
-                        {/* Dot / Marker */}
-                        <div className={`w-4 h-4 rounded-full bg-white dark:bg-slate-900 border-[3px] border-pmi-blue dark:border-blue-500 shadow-sm z-10 ${step.isStart ? 'ml-0' : step.isEnd ? 'mr-0' : ''}`} />
+                        <div
+                            className={`z-10 h-4 w-4 rounded-full border-2 border-white/90 bg-gradient-to-br from-[#005FB9] to-[#3F37C9] shadow-md ${step.isStart ? 'ml-0' : step.isEnd ? 'mr-0' : ''}`}
+                        />
 
-                        {/* Date Above Line */}
                         <div className={`absolute -top-9 w-32 ${step.isStart ? 'text-left' : step.isEnd ? 'text-right' : 'text-center'}`}>
-                            <span className="block text-[13px] font-black text-pmi-navy/80 dark:text-white/80 tracking-tight">
+                            <span className={`block font-display text-sm font-semibold tracking-tight ${step.isEnd ? 'text-[#3F37C9] dark:text-blue-400' : 'text-foreground/80'}`}>
                                 {step.year} {step.isEnd ? '(PRESENT)' : ''}
                             </span>
                         </div>
 
-                        {/* Role Below Line */}
                         <div className={`mt-4 w-32 md:w-40 ${step.isStart ? 'text-left' : step.isEnd ? 'text-right' : 'text-center'}`}>
-                            <span className={`block text-[11px] font-black tracking-widest leading-tight ${step.isEnd ? 'text-pmi-blue dark:text-blue-400' : 'text-slate-400 dark:text-slate-500'}`}>
+                            <span className={`block text-xs font-semibold tracking-wide leading-tight ${step.isEnd ? 'text-foreground' : 'text-muted-foreground'}`}>
                                 {step.label}
                             </span>
                         </div>
