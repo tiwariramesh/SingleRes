@@ -13,13 +13,13 @@ const Credentials = ({ educations = [], certifications = [] }) => {
     };
 
     return (
-        <section id="credentials" className="py-12 bg-slate-50 dark:bg-slate-900/50 transition-colors duration-300">
+        <section id="credentials" className="py-16 bg-slate-50 dark:bg-slate-900/50 transition-colors duration-300">
             <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="mb-10">
-                    <h2 className="text-[36px] font-black text-pmi-navy dark:text-white tracking-tight leading-tight">
+                    <h2 className="text-4xl font-black text-pmi-navy dark:text-white tracking-tight leading-tight">
                         Learning & <span className="text-pmi-blue dark:text-blue-400">Credentials.</span>
                     </h2>
-                    <p className="text-[12px] text-slate-500 dark:text-slate-400 font-medium mt-2">Academic foundations and enterprise certifications.</p>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-2">Academic foundations and enterprise certifications.</p>
                 </div>
 
                 {/* Degrees Section */}
@@ -86,10 +86,10 @@ const Credentials = ({ educations = [], certifications = [] }) => {
                             </div>
 
                             <div className="flex flex-wrap gap-1.5 pt-2 border-t border-slate-50 dark:border-slate-800/50">
-                                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded uppercase" style={{ backgroundColor: '#e0f2fe', color: '#0369a1' }}>
+                                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded uppercase bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-400">
                                     {cert.issuer}
                                 </span>
-                                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded uppercase" style={{ backgroundColor: '#f1f5f9', color: '#475569' }}>
+                                <span className="text-[9px] font-bold px-1.5 py-0.5 rounded uppercase bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400">
                                     Issued on {cert.year}
                                 </span>
                             </div>

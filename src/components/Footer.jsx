@@ -2,13 +2,13 @@ import React from 'react';
 import * as Icons from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const Footer = ({ firstName, lastName, socialLinks = [], services = [] }) => {
+// Helper for dynamic Lucide icons
+const Icon = ({ name, size = 20, className }) => {
+    const LucideIcon = Icons[name];
+    return LucideIcon ? <LucideIcon size={size} className={className} /> : null;
+};
 
-    // Helper for icons
-    const Icon = ({ name, size = 20, className }) => {
-        const LucideIcon = Icons[name];
-        return LucideIcon ? <LucideIcon size={size} className={className} /> : null;
-    };
+const Footer = ({ firstName, lastName, socialLinks = [], services = [] }) => {
 
     // Extract specific links if needed for the top section layout
     const emailLink = socialLinks.find(l => l.platform === 'Email');
@@ -19,8 +19,8 @@ const Footer = ({ firstName, lastName, socialLinks = [], services = [] }) => {
             <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="grid lg:grid-cols-4 gap-12 mb-16">
                     <div className="lg:col-span-2 space-y-6">
-                        <h2 className="text-[36px] font-black text-pmi-navy dark:text-slate-100">Ready to <span className="text-pmi-blue dark:text-blue-400">Scale Together?</span></h2>
-                        <p className="text-muted-foreground dark:text-slate-400 font-medium max-w-md text-[12px]">Let's discuss how we can drive your project success and team growth through proven agile methodologies.</p>
+                        <h2 className="text-4xl font-black text-pmi-navy dark:text-slate-100">Ready to <span className="text-pmi-blue dark:text-blue-400">Scale Together?</span></h2>
+                        <p className="text-muted-foreground dark:text-slate-400 font-medium max-w-md text-xs">Let's discuss how we can drive your project success and team growth through proven agile methodologies.</p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             {emailLink && (
                                 <a href={emailLink.url} className="px-5 py-2.5 rounded-lg bg-pmi-navy dark:bg-blue-600 text-white font-bold text-sm hover:bg-black dark:hover:bg-blue-700 transition-colors flex items-center justify-center gap-2.5">
@@ -39,7 +39,7 @@ const Footer = ({ firstName, lastName, socialLinks = [], services = [] }) => {
 
                     <div className="space-y-4">
                         <h4 className="font-black text-pmi-navy dark:text-white uppercase tracking-widest text-xs">Services</h4>
-                        <ul className="space-y-2 text-muted-foreground dark:text-slate-400 font-medium text-[12px]">
+                        <ul className="space-y-2 text-muted-foreground dark:text-slate-400 font-medium text-xs">
                             {services.length > 0 ? services.slice(0, 5).map((service, i) => (
                                 <li key={i}><a href="#services" className="hover:text-pmi-blue dark:hover:text-blue-400">{service.title}</a></li>
                             )) : (
@@ -50,7 +50,7 @@ const Footer = ({ firstName, lastName, socialLinks = [], services = [] }) => {
 
                     <div className="space-y-4">
                         <h4 className="font-black text-pmi-navy dark:text-white uppercase tracking-widest text-[10px]">Contact</h4>
-                        <div className="text-muted-foreground dark:text-slate-400 font-medium text-[12px] space-y-2">
+                        <div className="text-muted-foreground dark:text-slate-400 font-medium text-xs space-y-2">
                             {socialLinks.filter(l => l.showInContact).map((link, i) => (
                                 <p key={i} className="flex gap-2 items-center">
                                     <span className="font-bold">{link.platform}</span> / <a href={link.url} className="hover:text-pmi-blue dark:hover:text-blue-400 truncate max-w-[150px] inline-block align-bottom">{link.url.replace('https://', '').replace('mailto:', '')}</a>

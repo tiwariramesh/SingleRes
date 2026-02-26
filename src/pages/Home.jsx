@@ -46,7 +46,7 @@ const Home = ({ profile, initials, experiences, services, socialLinks, skills, e
                 </Suspense>
 
                 <Suspense fallback={<SectionLoader />}>
-                    <CareerJourney experiences={experiences} timelineSteps={profile?.timelineSteps} />
+                    <CareerJourney experiences={experiences} />
                 </Suspense>
 
                 <Suspense fallback={<SectionLoader />}>

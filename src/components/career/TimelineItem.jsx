@@ -1,10 +1,10 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 
 export const TimelineItem = ({
     exp,
     displayDate,
-    duration,
     colorValue,
     descPoints
 }) => {
@@ -33,7 +33,7 @@ export const TimelineItem = ({
                         </h3>
 
                         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                            <h5 className="text-[12px] font-extrabold" style={{ color: colorValue }}>
+                            <h5 className="text-xs font-extrabold" style={{ color: colorValue }}>
                                 {exp.company}
                             </h5>
                             <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600 hidden sm:block"></span>
@@ -50,7 +50,7 @@ export const TimelineItem = ({
                 {descPoints.map((point, i) => (
                     <li key={i} className="flex items-start gap-2 text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
                         <span className="mt-1.5 w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: colorValue }} />
-                        <span className="text-[12px]">{point}</span>
+                        <span className="text-xs">{point}</span>
                     </li>
                 ))}
             </ul>
