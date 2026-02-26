@@ -37,23 +37,21 @@ export const experiences = [
         ],
         logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHZyih_N7qjvDOR7SoGw1SJUHGsNS6vQ3Eg&s",
         order: 1,
-        color: "bg-pmi-blue",
-        textColor: "text-pmi-blue"
+        color: "#a6ce39"
     },
     {
         id: 2,
         company: "Leapfrog Technology, Kathmandu, Nepal",
-        role: "Project Manager",
+        role: "ICT Project Manager",
         startDate: "2020-06-20",
         endDate: "2023-07-15",
         description: [
             "Train and assess students in project domains (cost, scope, risk) using Agile and PMBOK methodologies.",
             "Design assessment tools and maintain a hands-on learning environment for industry-standard software like MS Project and Jira."
         ],
-        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHZyih_N7qjvDOR7SoGw1SJUHGsNS6vQ3Eg&s",
+        logo: "https://media.licdn.com/dms/image/v2/D4D0BAQGW2mdMPhlOjA/company-logo_200_200/company-logo_200_200/0/1696567947115/lftechnology_logo?e=2147483647&v=beta&t=qjcDszw5d-LFTJC7z4dnyCz4haXexpw4RkS1-gqm7EI",
         order: 2,
-        color: "bg-emerald-500",
-        textColor: "text-emerald-500"
+        color: "#048e43"
     },
     {
         id: 3,
@@ -65,10 +63,9 @@ export const experiences = [
             "Managed project schedules, budgets, and stakeholder communication.",
             "Delivered key software products on time and within scope."
         ],
-        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHZyih_N7qjvDOR7SoGw1SJUHGsNS6vQ3Eg&s",
+        logo: "https://republicaimg.nagariknewscdn.com/shared/web/uploads/media/esewa_20200118185351.jpg",
         order: 3,
-        color: "bg-amber-500",
-        textColor: "text-amber-500"
+        color: "#61bc47"
     },
     {
         id: 4,
@@ -80,10 +77,9 @@ export const experiences = [
             "Contributed to project planning and execution in a fast-paced environment.",
             "Gained foundational experience in project coordination and agile basics."
         ],
-        logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNHZyih_N7qjvDOR7SoGw1SJUHGsNS6vQ3Eg&s",
+        logo: "https://media.licdn.com/dms/image/v2/D4D0BAQE9yrbRT87Kyw/company-logo_200_200/company-logo_200_200/0/1696484560023/cloudfactory_nepal_logo?e=2147483647&v=beta&t=2oXHqykX8UCsPNyavt8q-X_SZ3pYTUQMk8TGyRfNUxM",
         order: 4,
-        color: "bg-purple-500",
-        textColor: "text-purple-500"
+        color: "#2596be"
     }
 ];
 
@@ -159,47 +155,80 @@ export const skills = [
 export const educations = [
     {
         id: 1,
-        title: "Master of Business Administration",
+        title: "Master of Project Management",
         name: "Project Management",
-        institution: "University of Tech",
-        year: "2014",
+        institution: "Curtin University",
+        location: "Perth, Australia",
+        year: "2022",
         order: 1,
         image: {
-            url: "https://placehold.co/100x100/2563eb/ffffff?text=MBA"
+            url: "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Curtin_University_Crest.jpg/250px-Curtin_University_Crest.jpg"
         }
     },
     {
         id: 2,
-        title: "Bachelor of Science",
-        name: "Computer Science",
-        institution: "State University",
-        year: "2012",
+        title: "Master of Business Administration in IT",
+        name: "MBA IT",
+        institution: "Tribhuvan University",
+        location: "Kathmandu, Nepal",
+        year: "2017",
         order: 2,
-        image: null
+        image: {
+            url: "https://portal.tu.edu.np/medias/Tribhuvan_University_logo.svg_2023_10_05_16_11_41.png"
+        }
+    },
+    {
+        id: 3,
+        title: "Bachelor of Computer Engineering",
+        name: "Computer Engineering",
+        institution: "Kathmandu University",
+        location: "Dhulikhel,Nepal",
+        year: "2012",
+        order: 3,
+        image: {
+            url: "https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Kathmandu_University_Logo.svg/250px-Kathmandu_University_Logo.svg.png"
+        }
     }
 ];
 
 export const certifications = [
     {
         id: 1,
-        name: "PMP",
-        role: "Project Management Professional",
-        year: "2018",
-        link: "https://www.pmi.org",
+        name: "PMP®",
+        role: "Project Management",
+        issuer: "Project Management Institute",
+        year: "2026",
+        link: "https://www.credly.com/badges/94a20fb6-0cc4-47a5-9c10-f9541b7a9e65",
+        description: "Project Management Professional",
         order: 1,
         logo: {
-            url: "https://placehold.co/80x80/2d3748/ffffff?text=PMP"
+            url: "https://images.credly.com/images/731e7ef4-9b0c-4d7b-ab65-23cc699c0aa3/blob"
         }
     },
     {
         id: 2,
-        name: "CSM",
-        role: "Certified Scrum Master",
-        year: "2016",
-        link: "https://www.scrumalliance.org",
+        name: "CAPM®",
+        role: "Certified Associate Project Manager",
+        issuer: "Project Management Institute",
+        year: "2025",
+        link: "https://www.credly.com/badges/94a20fb6-0cc4-47a5-9c10-f9541b7a9e65",
+        description: "Certified Associate Project Manager",
         order: 2,
         logo: {
-            url: "https://placehold.co/80x80/2d3748/ffffff?text=CSM"
+            url: "https://images.credly.com/size/680x680/images/80c95f74-dcf0-43fc-a437-053a598feb05/blob"
+        }
+    },
+    {
+        id: 3,
+        name: "CSPO®",
+        role: "Certified Scrum Product Owner",
+        issuer: "Scrum Alliance",
+        year: "2019",
+        link: "#",
+        description: "Certified Scrum Product Owner",
+        order: 3,
+        logo: {
+            url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoH1_3M84_iC7rOVk21LMjYDySTdg36ejWKw&s"
         }
     }
 ];

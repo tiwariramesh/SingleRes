@@ -9,6 +9,7 @@ import { MobileMenu } from './navbar/MobileMenu';
 
 const navItems = [
     { label: 'Home', href: '#' },
+    { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
     { label: 'Experiences', href: '#experience' },
     { label: 'Credentials', href: '#credentials' },
@@ -56,7 +57,7 @@ const Navbar = ({ initials, firstName, lastName }) => {
         py-1.5 px-4 md:px-6
         glass-card dark:glass-card-dark
         rounded-full transition-all duration-300
-        w-full max-w-6xl
+        w-full max-w-[1400px]
         ${isScrolled ? 'md:py-1.5 transform scale-[0.98]' : 'md:py-2.5'}
       `}>
                 {/* Logo & Name */}

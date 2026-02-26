@@ -9,12 +9,12 @@ const CareerJourney = ({ experiences = [], timelineSteps = [] }) => {
 
     return (
         <section id="experience" className="py-16 bg-gradient-to-b from-white via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900/50 overflow-hidden transition-colors duration-300">
-            <div className="container mx-auto px-4 max-w-6xl">
+            <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="mb-16 text-center md:text-left">
                     <h2 className="text-5xl font-black text-pmi-navy dark:text-white tracking-tight mb-4">
                         Career <span className="text-pmi-blue dark:text-blue-400">Journey.</span>
                     </h2>
-                    <p className="text-lg text-muted-foreground dark:text-slate-400 font-medium">
+                    <p className="text-lg text-muted-foreground dark:text-slate-400 font-light">
                         Progressive impact across global organizations and transformative initiatives
                     </p>
                 </div>
@@ -48,8 +48,7 @@ const CareerJourney = ({ experiences = [], timelineSteps = [] }) => {
                                 duration = years > 0 ? `${years} yr${years > 1 ? 's' : ''} ${months} mo${months > 1 ? 's' : ''}` : `${months} mo${months > 1 ? 's' : ''}`;
                             }
 
-                            const colorClass = exp.color || "bg-pmi-blue";
-                            const textColorClass = colorClass.replace('bg-', 'text-');
+                            const colorValue = exp.color || "#005FB9";
 
                             return (
                                 <TimelineItem
@@ -57,8 +56,7 @@ const CareerJourney = ({ experiences = [], timelineSteps = [] }) => {
                                     exp={exp}
                                     displayDate={displayDate}
                                     duration={duration}
-                                    colorClass={colorClass}
-                                    textColorClass={textColorClass}
+                                    colorValue={colorValue}
                                     descPoints={descPoints}
                                 />
                             );

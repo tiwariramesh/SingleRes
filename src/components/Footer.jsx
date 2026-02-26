@@ -16,7 +16,7 @@ const Footer = ({ firstName, lastName, socialLinks = [], services = [] }) => {
 
     return (
         <footer id="contact" className="bg-slate-100 dark:bg-black pt-16 pb-8 border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
-            <div className="container mx-auto px-4 max-w-6xl">
+            <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="grid lg:grid-cols-4 gap-12 mb-16">
                     <div className="lg:col-span-2 space-y-6">
                         <h2 className="text-4xl font-black text-pmi-navy dark:text-slate-100">Ready to <span className="text-pmi-blue dark:text-blue-400">Scale Together?</span></h2>

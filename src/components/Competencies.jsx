@@ -6,7 +6,7 @@ const Competencies = ({ skills = [] }) => {
 
     return (
         <section id="skills" className="py-16 bg-white dark:bg-slate-950 transition-colors duration-300">
-            <div className="container mx-auto px-4 max-w-6xl">
+            <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="mb-12">
                     <h2 className="text-5xl font-black text-pmi-navy dark:text-white tracking-tight mb-6">
                         Core <span className="text-pmi-blue dark:text-blue-400">Competencies.</span>

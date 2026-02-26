@@ -14,7 +14,7 @@ const Services = ({ services = [] }) => {
 
     return (
         <section id="services" className="py-16 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900/50 dark:to-slate-900 transition-colors duration-300">
-            <div className="container mx-auto px-4 max-w-6xl">
+            <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="mb-16">
                     <h2 className="text-5xl font-black text-pmi-navy dark:text-white tracking-tight">
                         Driving Excellence with <br /><span className="text-pmi-blue dark:text-blue-400">Professional Services.</span>

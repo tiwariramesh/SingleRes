@@ -3,6 +3,26 @@ import { FileText, Download, FileType } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const ResumeSection = () => {
+    const handleDownloadATS = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('https://raw.githubusercontent.com/tiwariramesh/SingleRes/main/src/assets/RameshTiwari_Resume_ATS.txt');
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'RameshTiwari_Resume_ATS.txt';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        } catch (error) {
+            console.error('Download failed:', error);
+            window.open('https://raw.githubusercontent.com/tiwariramesh/SingleRes/main/src/assets/RameshTiwari_Resume_ATS.txt', '_blank');
+        }
+    };
+
     return (
         <section id="resume" className="py-12 bg-white dark:bg-slate-950 transition-colors duration-300">
             <div className="container mx-auto px-4 max-w-4xl">
@@ -10,7 +30,7 @@ const ResumeSection = () => {
                     <h2 className="text-3xl md:text-4xl font-black text-pmi-navy dark:text-white tracking-tight">
                         Professional <span className="text-pmi-blue dark:text-blue-400">Resume.</span>
                     </h2>
-                    <p className="text-muted-foreground dark:text-slate-400 font-medium mt-2 text-sm md:text-base">
+                    <p className="text-muted-foreground dark:text-slate-400 font-light mt-2 text-sm md:text-base">
                         Download my latest resume in your preferred format
                     </p>
                 </div>
@@ -49,13 +69,11 @@ const ResumeSection = () => {
                             </div>
                         </div>
                         <Button
-                            asChild
+                            onClick={handleDownloadATS}
                             variant="outline"
                             className="h-10 px-5 rounded-xl border-2 border-slate-200 dark:border-slate-700 font-bold text-sm flex items-center gap-2 hover:bg-emerald-500 hover:text-white dark:hover:bg-emerald-600 hover:border-emerald-500 transition-all hover:scale-[1.02]"
                         >
-                            <a href="https://github.com/tiwariramesh/SingleRes/raw/main/src/assets/RameshTiwari_Resume_ATS.txt" download>
-                                <Download size={16} /> Download
-                            </a>
+                            Download
                         </Button>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ import { Footer } from '../components/Footer';
 // Lazy load heavy components below the fold
 const ResumeSection = lazy(() => import('../components/ResumeSection'));
 const Competencies = lazy(() => import('../components/Competencies'));
+const AboutMe = lazy(() => import('../components/AboutMe'));
 const CareerJourney = lazy(() => import('../components/CareerJourney'));
 const Credentials = lazy(() => import('../components/Credentials'));
 const Services = lazy(() => import('../components/Services'));
@@ -32,6 +33,10 @@ const Home = ({ profile, initials, experiences, services, socialLinks, skills, e
                 <Hero profile={profile} />
 
                 {/* Lazy load the rest */}
+                <Suspense fallback={<SectionLoader />}>
+                    <AboutMe />
+                </Suspense>
+
                 <Suspense fallback={<SectionLoader />}>
                     <ResumeSection />
                 </Suspense>

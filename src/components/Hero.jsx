@@ -1,6 +1,5 @@
 import React from 'react';
 import { HeroContent } from './hero/HeroContent';
-import { HeroStats } from './hero/HeroStats';
 import { HeroImage } from './hero/HeroImage';
 
 const Hero = ({ profile }) => {
@@ -26,13 +25,12 @@ const Hero = ({ profile }) => {
 
     return (
         <section className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-24">
-            <div className="container mx-auto px-4 max-w-6xl">
+            <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="grid lg:grid-cols-12 gap-12 items-center">
 
                     {/* Left Content */}
                     <div className="lg:col-span-7">
                         <HeroContent title={title} subtitle={subtitle} bio={bio} />
-                        <HeroStats stats={heroStats} />
                     </div>
 
                     {/* Right Content (Image & Badges) */}
