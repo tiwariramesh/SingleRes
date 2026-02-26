@@ -3,18 +3,18 @@ import { useTimelineData } from '@/hooks/useTimelineData';
 import { TimelineScale } from './career/TimelineScale';
 import { TimelineItem } from './career/TimelineItem';
 
-const CareerJourney = ({ experiences = [], timelineSteps = [] }) => {
+const CareerJourney = ({ experiences = [] }) => {
 
-    const { sortedExperiences, renderedSteps } = useTimelineData(experiences, timelineSteps);
+    const { sortedExperiences, renderedSteps } = useTimelineData(experiences);
 
     return (
         <section id="experience" className="py-16 bg-gradient-to-b from-white via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900/50 overflow-hidden transition-colors duration-300">
             <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="mb-16 text-center md:text-left">
-                    <h2 className="text-[36px] font-black text-pmi-navy dark:text-white tracking-tight mb-4">
+                    <h2 className="text-4xl font-black text-pmi-navy dark:text-white tracking-tight mb-4">
                         Career <span className="text-pmi-blue dark:text-blue-400">Journey.</span>
                     </h2>
-                    <p className="text-[12px] text-muted-foreground dark:text-slate-400 font-light">
+                    <p className="text-xs text-muted-foreground dark:text-slate-400 font-light">
                         Progressive impact across global organizations and transformative initiatives
                     </p>
                 </div>
@@ -37,16 +37,6 @@ const CareerJourney = ({ experiences = [], timelineSteps = [] }) => {
                                 displayDate = `${start} - ${end}`;
                             }
 
-                            let duration = exp.duration;
-                            if ((!duration || duration === 'Current') && exp.startDate) {
-                                const start = new Date(exp.startDate);
-                                const end = exp.endDate ? new Date(exp.endDate) : new Date();
-                                const diffMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
-                                const years = Math.floor(diffMonths / 12);
-                                const months = diffMonths % 12;
-                                duration = years > 0 ? `${years} yr${years > 1 ? 's' : ''} ${months} mo${months > 1 ? 's' : ''}` : `${months} mo${months > 1 ? 's' : ''}`;
-                            }
-
                             const colorValue = exp.color || "#005FB9";
 
                             return (
@@ -54,7 +44,6 @@ const CareerJourney = ({ experiences = [], timelineSteps = [] }) => {
                                     key={index}
                                     exp={exp}
                                     displayDate={displayDate}
-                                    duration={duration}
                                     colorValue={colorValue}
                                     descPoints={descPoints}
                                 />

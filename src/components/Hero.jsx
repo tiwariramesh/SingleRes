@@ -10,7 +10,6 @@ const Hero = ({ profile }) => {
         title,
         subtitle,
         bio,
-        heroStats,
         heroBadges,
         profilePhoto
     } = profile;

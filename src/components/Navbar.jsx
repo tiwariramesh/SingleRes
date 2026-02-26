@@ -65,7 +65,7 @@ const Navbar = ({ initials, firstName, lastName }) => {
                     <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-pmi-blue flex items-center justify-center text-white font-bold text-xs md:text-sm shadow-lg shadow-pmi-blue/30 overflow-hidden">
                         {initials || 'RT'}
                     </div>
-                    <span className="font-black text-pmi-navy dark:text-white tracking-[0.05em] text-[12px] md:text-sm whitespace-nowrap">
+                    <span className="font-black text-pmi-navy dark:text-white tracking-[0.05em] text-xs md:text-sm whitespace-nowrap">
                         {firstName?.toUpperCase() || 'RAMESH'} <span className="text-pmi-blue">{lastName?.toUpperCase() || 'TIWARI.'}</span>
                     </span>
                 </Link>
@@ -90,9 +90,9 @@ const Navbar = ({ initials, firstName, lastName }) => {
                         aria-label="Toggle theme"
                     >
                         {theme === 'dark' ? (
-                            <Moon className="w-5 h-5 text-pmi-navy/60 dark:text-slate-300" />
-                        ) : (
                             <Sun className="w-5 h-5 text-pmi-navy/60 dark:text-slate-300" />
+                        ) : (
+                            <Moon className="w-5 h-5 text-pmi-navy/60 dark:text-slate-300" />
                         )}
                     </button>
                     <a

@@ -19,7 +19,7 @@ export const HeroContent = ({ title, subtitle, bio }) => {
             </div>
 
             <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-[36px] font-black text-pmi-navy dark:text-white leading-tight tracking-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-4xl font-black text-pmi-navy dark:text-white leading-tight tracking-tight">
                     {/* Gradient Title */}
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-pmi-blue via-pmi-blue to-cyan-500 dark:from-blue-400 dark:to-cyan-300" dangerouslySetInnerHTML={{ __html: title || "Agile Project Manager" }} />
                 </h1>

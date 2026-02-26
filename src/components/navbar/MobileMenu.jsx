@@ -17,9 +17,9 @@ export const MobileMenu = ({ navItems, toggleTheme, theme, linkedinUrl, scrollTo
                 aria-label="Toggle theme"
             >
                 {theme === 'dark' ? (
-                    <Moon className="w-5 h-5 text-pmi-navy/60 dark:text-slate-300" />
-                ) : (
                     <Sun className="w-5 h-5 text-pmi-navy/60 dark:text-slate-300" />
+                ) : (
+                    <Moon className="w-5 h-5 text-pmi-navy/60 dark:text-slate-300" />
                 )}
             </button>
             <Sheet>

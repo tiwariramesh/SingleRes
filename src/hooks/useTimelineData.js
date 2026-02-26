@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-export const useTimelineData = (experiences = [], timelineSteps = []) => {
+export const useTimelineData = (experiences = []) => {
     return useMemo(() => {
         // Sort experiences by startDate to find true timeline bounds
         const sortedByDate = [...experiences]
@@ -14,7 +14,6 @@ export const useTimelineData = (experiences = [], timelineSteps = []) => {
 
         if (sortedByDate.length > 0) {
             const firstExp = sortedByDate[0];
-            const lastExp = sortedByDate[sortedByDate.length - 1];
 
             const startDate = new Date(firstExp.startDate);
             const startTime = startDate.getTime();

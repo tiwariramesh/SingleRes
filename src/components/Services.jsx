@@ -16,10 +16,10 @@ const Services = ({ services = [] }) => {
         <section id="services" className="py-16 bg-gradient-to-b from-slate-50 to-slate-100 dark:from-slate-900/50 dark:to-slate-900 transition-colors duration-300">
             <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="mb-16">
-                    <h2 className="text-[36px] font-black text-pmi-navy dark:text-white tracking-tight">
+                    <h2 className="text-4xl font-black text-pmi-navy dark:text-white tracking-tight">
                         Driving Excellence with <br /><span className="text-pmi-blue dark:text-blue-400">Professional Services.</span>
                     </h2>
-                    <p className="text-slate-500 dark:text-slate-400 font-medium mt-6 max-w-2xl text-[12px]">
+                    <p className="text-slate-500 dark:text-slate-400 font-medium mt-6 max-w-2xl text-xs">
                         Empowering organizations through strategic agile implementation and leadership development.
                     </p>
                 </div>
@@ -35,7 +35,7 @@ const Services = ({ services = [] }) => {
                                     <Icon name={service.icon} size={32} />
                                 </div>
                                 <h3 className="text-2xl font-black text-pmi-navy dark:text-slate-100 tracking-tight">{service.title}</h3>
-                                <p className="text-slate-600 dark:text-slate-400 text-[12px] mt-4 leading-relaxed font-medium">
+                                <p className="text-slate-600 dark:text-slate-400 text-xs mt-4 leading-relaxed font-medium">
                                     {service.description}
                                 </p>
                             </div>
