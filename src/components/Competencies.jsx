@@ -8,10 +8,10 @@ const Competencies = ({ skills = [] }) => {
         <section id="skills" className="py-16 bg-white dark:bg-slate-950 transition-colors duration-300">
             <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="mb-12">
-                    <h2 className="text-5xl font-black text-pmi-navy dark:text-white tracking-tight mb-6">
+                    <h2 className="text-[36px] font-black text-pmi-navy dark:text-white tracking-tight mb-6">
                         Core <span className="text-pmi-blue dark:text-blue-400">Competencies.</span>
                     </h2>
-                    <p className="text-lg text-slate-500 dark:text-slate-400 font-medium max-w-3xl leading-relaxed">
+                    <p className="text-[12px] text-slate-500 dark:text-slate-400 font-medium max-w-3xl leading-relaxed">
                         A blend of strategic leadership, technical acumen, and proven methodologies to drive enterprise transformation.
                     </p>
                 </div>
@@ -40,7 +40,7 @@ const Competencies = ({ skills = [] }) => {
                                                 <h4 className="text-base font-black text-pmi-navy dark:text-white mb-1 group-hover:text-pmi-blue dark:group-hover:text-blue-400 transition-colors">
                                                     {skill.name}
                                                 </h4>
-                                                <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
+                                                <p className="text-[12px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
                                                     {skill.desc}
                                                 </p>
                                             </div>

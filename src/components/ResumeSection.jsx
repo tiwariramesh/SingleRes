@@ -27,10 +27,10 @@ const ResumeSection = () => {
         <section id="resume" className="py-12 bg-white dark:bg-slate-950 transition-colors duration-300">
             <div className="container mx-auto px-4 max-w-4xl">
                 <div className="text-center mb-10">
-                    <h2 className="text-3xl md:text-4xl font-black text-pmi-navy dark:text-white tracking-tight">
+                    <h2 className="text-[36px] font-black text-pmi-navy dark:text-white tracking-tight">
                         Professional <span className="text-pmi-blue dark:text-blue-400">Resume.</span>
                     </h2>
-                    <p className="text-muted-foreground dark:text-slate-400 font-light mt-2 text-sm md:text-base">
+                    <p className="text-muted-foreground dark:text-slate-400 font-light mt-2 text-[12px]">
                         Download my latest resume in your preferred format
                     </p>
                 </div>

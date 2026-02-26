@@ -2,7 +2,7 @@ import React from 'react';
 
 export const HeroImage = ({ imageUrl, badges }) => {
     return (
-        <div className="lg:col-span-12 xl:col-span-5 relative flex justify-center lg:justify-end xl:pr-16 py-10 lg:py-0">
+        <div className="hidden lg:flex lg:col-span-12 xl:col-span-5 relative justify-center lg:justify-end xl:pr-16 py-10 lg:py-0">
             <div className="relative flex justify-center items-center w-full h-[500px]">
                 {/* Static Shadow/Background Ovals */}
                 {/* Top Right Shadow Oval */}

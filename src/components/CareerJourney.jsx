@@ -11,10 +11,10 @@ const CareerJourney = ({ experiences = [], timelineSteps = [] }) => {
         <section id="experience" className="py-16 bg-gradient-to-b from-white via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900/50 overflow-hidden transition-colors duration-300">
             <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="mb-16 text-center md:text-left">
-                    <h2 className="text-5xl font-black text-pmi-navy dark:text-white tracking-tight mb-4">
+                    <h2 className="text-[36px] font-black text-pmi-navy dark:text-white tracking-tight mb-4">
                         Career <span className="text-pmi-blue dark:text-blue-400">Journey.</span>
                     </h2>
-                    <p className="text-lg text-muted-foreground dark:text-slate-400 font-light">
+                    <p className="text-[12px] text-muted-foreground dark:text-slate-400 font-light">
                         Progressive impact across global organizations and transformative initiatives
                     </p>
                 </div>
@@ -22,9 +22,8 @@ const CareerJourney = ({ experiences = [], timelineSteps = [] }) => {
                 {/* Horizontal Timeline (Desktop) */}
                 <TimelineScale steps={renderedSteps} />
 
-                {/* Left-Aligned Timeline Layout */}
-                <div className="relative mt-16 px-4 md:px-0">
-                    <div className="space-y-12">
+                <div className="relative mt-8">
+                    <div className="grid md:grid-cols-2 gap-8">
                         {sortedExperiences.map((exp, index) => {
                             // Logic moved here for now or could be further extracted
                             const descPoints = typeof exp.description === 'string'

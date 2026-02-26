@@ -24,7 +24,7 @@ const Hero = ({ profile }) => {
     const imageUrl = getPhotoUrl(profilePhoto) || "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop";
 
     return (
-        <section className="relative overflow-hidden pt-28 pb-16 lg:pt-36 lg:pb-24">
+        <section className="relative overflow-hidden pt-28 pb-4 lg:pt-36 lg:pb-6">
             <div className="container mx-auto px-4 max-w-[1400px]">
                 <div className="grid lg:grid-cols-12 gap-12 items-center">
 

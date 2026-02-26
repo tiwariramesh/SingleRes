@@ -57,7 +57,7 @@ const Navbar = ({ initials, firstName, lastName }) => {
         py-1.5 px-4 md:px-6
         glass-card dark:glass-card-dark
         rounded-full transition-all duration-300
-        w-full max-w-[1400px]
+        w-full max-w-6xl
         ${isScrolled ? 'md:py-1.5 transform scale-[0.98]' : 'md:py-2.5'}
       `}>
                 {/* Logo & Name */}
@@ -65,7 +65,7 @@ const Navbar = ({ initials, firstName, lastName }) => {
                     <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-pmi-blue flex items-center justify-center text-white font-bold text-xs md:text-sm shadow-lg shadow-pmi-blue/30 overflow-hidden">
                         {initials || 'RT'}
                     </div>
-                    <span className="font-black text-pmi-navy dark:text-white tracking-[0.05em] text-[13px] md:text-sm whitespace-nowrap">
+                    <span className="font-black text-pmi-navy dark:text-white tracking-[0.05em] text-[12px] md:text-sm whitespace-nowrap">
                         {firstName?.toUpperCase() || 'RAMESH'} <span className="text-pmi-blue">{lastName?.toUpperCase() || 'TIWARI.'}</span>
                     </span>
                 </Link>
