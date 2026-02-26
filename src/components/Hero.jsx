@@ -5,13 +5,7 @@ import { Button } from '@/components/ui/button';
 const Hero = ({ profile }) => {
     if (!profile) return null;
 
-    const {
-        title,
-        subtitle,
-        bio,
-        heroBadges,
-        profilePhoto
-    } = profile;
+    const { title, subtitle, bio, profilePhoto } = profile;
 
     const getPhotoUrl = (photo) => {
         if (!photo) return null;

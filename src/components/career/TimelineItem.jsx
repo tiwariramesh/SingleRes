@@ -1,11 +1,9 @@
 import React from 'react';
-// eslint-disable-next-line no-unused-vars
-import { motion } from 'framer-motion';
 
 export const TimelineItem = ({
     exp,
     displayDate,
-    colorValue,
+    duration,
     descPoints
 }) => {
     return (
@@ -27,12 +25,12 @@ export const TimelineItem = ({
                             {exp.role}
                         </h3>
 
+                        <h5 className="mb-2 text-sm font-semibold text-muted-foreground">
+                            {exp.company}
+                        </h5>
+
                         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-                            <h5 className="text-xs font-extrabold" style={{ color: colorValue }}>
-                                {exp.company}
-                            </h5>
-                            <span className="w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-600 hidden sm:block"></span>
-                            <span className="text-[11px] font-black text-pmi-blue dark:text-blue-400 uppercase tracking-tight">
+                            <span className="rounded-md bg-[#005FB9]/10 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-[#005FB9] dark:text-blue-400">
                                 {displayDate}
                             </span>
                             {duration && (
@@ -47,8 +45,8 @@ export const TimelineItem = ({
 
             <ul className="space-y-2 relative z-10 flex-grow">
                 {descPoints.map((point, i) => (
-                    <li key={i} className="flex items-start gap-2 text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                        <span className="mt-1.5 w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: colorValue }} />
+                    <li key={i} className="flex items-start gap-2 font-medium leading-relaxed text-muted-foreground">
+                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-border" />
                         <span className="text-xs">{point}</span>
                     </li>
                 ))}

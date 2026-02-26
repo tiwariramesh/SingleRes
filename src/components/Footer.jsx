@@ -2,15 +2,12 @@ import React from 'react';
 import * as Icons from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-// Helper for dynamic Lucide icons
-const Icon = ({ name, size = 20, className }) => {
+const renderIcon = (name, size = 20, className) => {
     const LucideIcon = Icons[name];
     return LucideIcon ? <LucideIcon size={size} className={className} /> : null;
 };
 
 const Footer = ({ firstName, lastName, socialLinks = [], services = [] }) => {
-
-    // Extract specific links if needed for the top section layout
     const emailLink = socialLinks.find(l => l.platform === 'Email');
     const linkedInLink = socialLinks.find(l => l.platform === 'LinkedIn');
 
@@ -19,8 +16,8 @@ const Footer = ({ firstName, lastName, socialLinks = [], services = [] }) => {
             <div className="container-shell">
                 <div className="grid lg:grid-cols-4 gap-12 mb-16">
                     <div className="lg:col-span-2 space-y-6">
-                        <h2 className="text-4xl font-black text-pmi-navy dark:text-slate-100">Ready to <span className="text-pmi-blue dark:text-blue-400">Scale Together?</span></h2>
-                        <p className="text-muted-foreground dark:text-slate-400 font-medium max-w-md text-xs">Let's discuss how we can drive your project success and team growth through proven agile methodologies.</p>
+                        <h2 className="section-heading"><span className="heading-first-word">Ready</span> to scale together?</h2>
+                        <p className="section-subheading max-w-md">Let’s discuss how we can drive project success and team growth through practical, proven delivery approaches.</p>
                         <div className="flex flex-col sm:flex-row gap-4">
                             {emailLink && (
                                 <a href={emailLink.url} className="interactive flex items-center justify-center gap-2.5 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90">
@@ -38,8 +35,8 @@ const Footer = ({ firstName, lastName, socialLinks = [], services = [] }) => {
                     </div>
 
                     <div className="space-y-4">
-                        <h4 className="font-black text-pmi-navy dark:text-white uppercase tracking-widest text-xs">Services</h4>
-                        <ul className="space-y-2 text-muted-foreground dark:text-slate-400 font-medium text-xs">
+                        <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground">Services</h4>
+                        <ul className="space-y-2 text-sm text-muted-foreground">
                             {services.length > 0 ? services.slice(0, 5).map((service, i) => (
                                 <li key={i}><a href="#services" className="interactive hover:text-brand">{service.title}</a></li>
                             )) : (
@@ -49,8 +46,8 @@ const Footer = ({ firstName, lastName, socialLinks = [], services = [] }) => {
                     </div>
 
                     <div className="space-y-4">
-                        <h4 className="font-black text-pmi-navy dark:text-white uppercase tracking-widest text-[10px]">Contact</h4>
-                        <div className="text-muted-foreground dark:text-slate-400 font-medium text-xs space-y-2">
+                        <h4 className="text-xs font-semibold uppercase tracking-widest text-foreground">Contact</h4>
+                        <div className="space-y-2 text-sm text-muted-foreground">
                             {socialLinks.filter(l => l.showInContact).map((link, i) => (
                                 <p key={i} className="flex gap-2 items-center">
                                     <span className="font-semibold">{link.platform}</span> / <a href={link.url} className="interactive inline-block max-w-[150px] truncate align-bottom hover:text-brand">{link.url.replace('https://', '').replace('mailto:', '')}</a>

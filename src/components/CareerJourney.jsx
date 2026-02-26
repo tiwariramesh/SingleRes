@@ -5,18 +5,15 @@ import { TimelineScale } from './career/TimelineScale';
 import { TimelineItem } from './career/TimelineItem';
 
 const CareerJourney = ({ experiences = [] }) => {
-
-    const { sortedExperiences, renderedSteps } = useTimelineData(experiences);
+    const { sortedExperiences, renderedSteps } = useTimelineData(experiences, careerJourneyTimeline);
 
     return (
-        <section id="experience" className="py-16 bg-gradient-to-b from-white via-white to-slate-50 dark:from-slate-950 dark:via-slate-950 dark:to-slate-900/50 overflow-hidden transition-colors duration-300">
-            <div className="container mx-auto px-4 max-w-[1400px]">
-                <div className="mb-16 text-center md:text-left">
-                    <h2 className="text-4xl font-black text-pmi-navy dark:text-white tracking-tight mb-4">
-                        Career <span className="text-pmi-blue dark:text-blue-400">Journey.</span>
-                    </h2>
-                    <p className="text-xs text-muted-foreground dark:text-slate-400 font-light">
-                        Progressive impact across global organizations and transformative initiatives
+        <section id="experience" className="section-shell bg-surface overflow-hidden">
+            <div className="container-shell">
+                <div className="mb-14 text-center md:text-left">
+                    <h2 className="section-heading mb-4"><span className="heading-first-word">Career</span> journey</h2>
+                    <p className="section-subheading">
+                        Progressive impact across global organisations and transformative initiatives
                     </p>
                 </div>
 
@@ -36,14 +33,22 @@ const CareerJourney = ({ experiences = [] }) => {
                                 displayDate = `${start} - ${end}`;
                             }
 
-                            const colorValue = exp.color || "#005FB9";
+                            let duration = exp.duration;
+                            if ((!duration || duration === 'Current') && exp.startDate) {
+                                const start = new Date(exp.startDate);
+                                const end = exp.endDate ? new Date(exp.endDate) : new Date();
+                                const diffMonths = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+                                const years = Math.floor(diffMonths / 12);
+                                const months = diffMonths % 12;
+                                duration = years > 0 ? `${years} yr${years > 1 ? 's' : ''} ${months} mo${months > 1 ? 's' : ''}` : `${months} mo${months > 1 ? 's' : ''}`;
+                            }
 
                             return (
                                 <TimelineItem
                                     key={index}
                                     exp={exp}
                                     displayDate={displayDate}
-                                    colorValue={colorValue}
+                                    duration={duration}
                                     descPoints={descPoints}
                                 />
                             );

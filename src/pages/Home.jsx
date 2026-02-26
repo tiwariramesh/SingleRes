@@ -21,31 +21,12 @@ const Home = ({ profile, initials, experiences, services, socialLinks, skills, e
 
             <main className="relative z-10">
                 <Hero profile={profile} />
-
-                {/* Lazy load the rest */}
-                <Suspense fallback={<SectionLoader />}>
-                    <AboutMe />
-                </Suspense>
-
-                <Suspense fallback={<SectionLoader />}>
-                    <ResumeSection />
-                </Suspense>
-
-                <Suspense fallback={<SectionLoader />}>
-                    <Competencies skills={skills} />
-                </Suspense>
-
-                <Suspense fallback={<SectionLoader />}>
-                    <CareerJourney experiences={experiences} />
-                </Suspense>
-
-                <Suspense fallback={<SectionLoader />}>
-                    <Credentials educations={educations} certifications={certifications} />
-                </Suspense>
-
-                <Suspense fallback={<SectionLoader />}>
-                    <Services services={services} />
-                </Suspense>
+                <AboutMe />
+                <ResumeSection />
+                <Competencies skills={skills} />
+                <CareerJourney experiences={experiences} />
+                <Credentials educations={educations} certifications={certifications} />
+                <Services services={services} />
             </main>
 
             <div className="relative z-10">
