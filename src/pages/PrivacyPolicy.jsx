@@ -9,7 +9,7 @@ import privacyContent from '../assets/privacy_policy.md?raw';
 
 const PrivacyPolicy = ({ profile, socialLinks, services }) => {
     return (
-        <div className="relative min-h-screen font-sans text-foreground selection:bg-brand selection:text-white overflow-hidden">
+        <div className="relative min-h-screen font-sans text-foreground overflow-hidden">
             <Navbar
                 firstName={profile?.firstName}
                 lastName={profile?.lastName}
@@ -18,7 +18,7 @@ const PrivacyPolicy = ({ profile, socialLinks, services }) => {
 
             <main className="relative z-10 pt-32 pb-24">
                 <div className="container-shell max-w-4xl">
-                    <div className="surface-card p-8 md:p-12 text-muted-foreground leading-relaxed text-sm md:text-base selection:bg-brand/20">
+                    <div className="surface-card p-8 md:p-12 text-muted-foreground leading-relaxed text-sm md:text-base">
                         <ReactMarkdown
                             remarkPlugins={[remarkGfm]}
                             components={{

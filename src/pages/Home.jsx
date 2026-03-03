@@ -12,7 +12,7 @@ import ScrollToTop from '../components/ScrollToTop';
 
 const Home = ({ profile, experiences, services, socialLinks, skills, educations, certifications }) => {
     return (
-        <div className="relative min-h-screen font-sans text-foreground selection:bg-brand selection:text-white overflow-hidden">
+        <div className="relative min-h-screen font-sans text-foreground overflow-hidden">
             <Navbar
                 firstName={profile?.firstName}
                 lastName={profile?.lastName}
